@@ -59,7 +59,7 @@ const Container = styled.div`
         color: rgb(71, 71, 71);
         font-size: 15px;
         padding: 5% 0%;
-        text-align: justify;
+        text-align: left;
         font-family: 'Poppins', sans-serif;
     }
 }

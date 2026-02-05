@@ -24,6 +24,7 @@ function DashProducts() {
 
   const handleToggleIn = () => setLoader(true);
   const handleToggleOut = () => setLoader(false);
+  
   const handleProduct = async (event) => {
     event.preventDefault();
 

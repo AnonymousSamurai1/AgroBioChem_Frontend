@@ -125,7 +125,7 @@ const Container = styled.div`
     color: white;
     padding-top: 2%;
     padding-right: 30%;
-    text-align: justify;
+    text-align: left;
     font-family: "Kanit";
     font-size: 15px;
   }
