@@ -34,7 +34,7 @@ const Credentials = () => {
 
     try {
       const res = await fetch(
-        'http://localhost:5612/agrobiochem/api/admins/login',
+        'https://agro-bio-chem-backend.vercel.app/agrobiochem/api/admins/login',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -76,7 +76,7 @@ const Credentials = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5612/agrobiochem/api/admins/', {
+      const res = await fetch('https://agro-bio-chem-backend.vercel.app/agrobiochem/api/admins/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

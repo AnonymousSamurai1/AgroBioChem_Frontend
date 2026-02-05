@@ -42,7 +42,7 @@ function DashProducts() {
       formData.append('image', image);
 
       const res = await fetch(
-        'http://localhost:5612/agrobiochem/api/products/',
+        'https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/',
         {
           method: 'POST',
           body: formData,
@@ -75,7 +75,7 @@ function DashProducts() {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        'http://localhost:5612/agrobiochem/api/products/'
+        'https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/'
       );
 
       if (!res.ok) {
@@ -105,7 +105,7 @@ function DashProducts() {
     setDetail(true);
     try {
       const res = await fetch(
-        `http://localhost:5612/agrobiochem/api/products/${id}`
+        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`
       );
       const data = await res.json();
 

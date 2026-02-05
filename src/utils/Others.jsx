@@ -8,7 +8,7 @@ function Products() {
   // ✅ Fetch all products
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:5612/agrobiochem/api/products");
+      const res = await fetch("https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products");
       const data = await res.json();
 
       if (data.success) {
@@ -25,7 +25,7 @@ function Products() {
   const fetchProductDetails = async (id) => {
     try {
       const res = await fetch(
-        `http://localhost:5612/agrobiochem/api/products/${id}`
+        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`
       );
       const data = await res.json();
 
