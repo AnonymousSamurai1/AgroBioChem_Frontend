@@ -55,7 +55,7 @@ const Container = styled.div`
     margin-bottom: 10%;
   }
   .imageloader {
-    width: 700px;
+    width: 500px;
   }
   .barloader {
     position: absolute;

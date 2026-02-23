@@ -253,8 +253,8 @@ const Container = styled.div`
     background-color: rgba(0, 0, 0, 0.8);
     .logo {
       padding: 1%;
-      width: 300px;
-      height: 70px;
+      width: 210px;
+      height: 55px;
     }
   }
   .icons {

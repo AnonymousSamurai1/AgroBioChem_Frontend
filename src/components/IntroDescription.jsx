@@ -84,24 +84,25 @@ function Introduction() {
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 5% 6%;
+  padding: 1% 6%;
 
   .title {
     width: 60%;
+    padding: 3% 0%;
   }
 
   .title h1 {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 49px;
-    line-height: 76px;
+    font-size: 39px;
+    line-height: 66px;
     color: rgba(230, 227, 227, 0.989);
   }
   .span {
     color: rgb(102, 179, 2);
     font-weight: bold;
-    font-size: 75px;
+    font-size: 65px;
   }
   .agro {
     font-size: 45px;
@@ -110,7 +111,7 @@ const Container = styled.div`
     display: none;
   }
   .typed {
-    font-size: 50px;
+    font-size: 40px;
     background: linear-gradient(
       97.24deg,
       rgb(255, 255, 255) 44.37%,
@@ -127,7 +128,7 @@ const Container = styled.div`
     padding-right: 30%;
     text-align: left;
     font-family: "Kanit";
-    font-size: 15px;
+    font-size: 13px;
   }
   .button-container {
     padding-top: 5%;
@@ -142,15 +143,15 @@ const Container = styled.div`
     }
   }
   .details {
-    width: 40%;
+    width: 37%;
     padding: 1% 0%;
   }
   .details-sub {
-    width: 46%;
+    width: 60%;
     height: 80%;
     border-radius: 20px;
     background: rgba(99, 145, 38, 0.67);
-    padding: 6% 20%;
+    padding: 7% 10%;
   }
   .slide {
     width: 100%;
@@ -163,13 +164,15 @@ const Container = styled.div`
       text-align: center;
       padding: 3% 0%;
       color: white;
-      width: 240px;
-      font-size: 14px;
+      width: 250px;
+      font-size: 12px;
       font-family: "Poppins", sans-serif;
     }
     p {
       color: white;
       text-align: center;
+      font-size: 12px;
+      font-family: "Kanit", sans-serif;
     }
   }
 
