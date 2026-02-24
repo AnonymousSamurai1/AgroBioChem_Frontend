@@ -50,8 +50,8 @@ const Container = styled.div`
   }
   .location {
     background: #0aa815ff;
-    width: 300px;
-    height: 41vh;
+    width: 250px;
+    height: 47vh;
     line-height: 30px;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
@@ -61,13 +61,13 @@ const Container = styled.div`
     font-family: Kanit;
     padding: 3% 4%;
     color: white;
-    font-size: 25px;
+    font-size: 15px;
   }
   .location h6 {
     color: #ffffffff;
     font-family: Kanit;
     padding: 5% 10%;
-    font-size: 15px;
+    font-size: 12px;
     span {
       color: yellow;
     }

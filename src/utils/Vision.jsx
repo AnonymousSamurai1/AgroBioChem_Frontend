@@ -43,7 +43,7 @@ const Container = styled.div`
 }
 .vision-description{
     width: 70%;
-    padding: 10% 5%;
+    padding: 5% 5%;
     .typed1{
         font-size: 49px;
         background: linear-gradient(97.24deg,rgb(63, 212, 50) 44.37%, rgba(160, 207, 167, 0.25) 113.02%);
@@ -57,9 +57,10 @@ const Container = styled.div`
     }
     h6{
         color: rgb(71, 71, 71);
-        font-size: 15px;
+        font-size: 12px;
         padding: 5% 0%;
         text-align: left;
+        font-weight: light;
         font-family: 'Poppins', sans-serif;
     }
 }

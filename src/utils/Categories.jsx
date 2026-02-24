@@ -25,7 +25,7 @@ padding: 6% 15%;
         height: 40px;
     }
     h5{
-        font-size: 13px;
+        font-size: 10px;
         padding: 3% 1%;
         font-weight: light;
         color: gray;

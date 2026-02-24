@@ -61,10 +61,10 @@ function Supports() {
 const Container = styled.div`
   width: 100%;
   .title{
-    padding 2% 17%;
+    padding 2% 20%;
   }
   .typed1{
-    font-size: 45px;
+    font-size: 35px;
     background: linear-gradient(97.24deg,rgb(63, 212, 50) 44.37%, rgba(160, 207, 167, 0.25) 113.02%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -86,7 +86,7 @@ const Container = styled.div`
   .support-main {
     position: relative;
     text-align: center;
-    padding: 2% 2%;
+    padding: 1.7%;
     justify-content: space-between;
     :hover{
       cursor: pointer;
@@ -94,8 +94,8 @@ const Container = styled.div`
     }
   }
   .support-image {
-    width: 240px;
-    height: 200px;
+    width: 200px;
+    height: 160px;
     transition: 0.3s ease;
   }
   .support-details-main{
@@ -103,9 +103,9 @@ const Container = styled.div`
   }
   .support-details {
     position: absolute;
-    top: 7.5%;
-    width: 220px;
-    height: 180px;
+    top: 7%;
+    width: 180px;
+    height: 140px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
     display: flex;
@@ -116,12 +116,12 @@ const Container = styled.div`
   }
 
   .support-details h1 {
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
     font-family: 'Kanit';
   }
   .support-details p {
-    font-size: 15px;
+    font-size: 12px;
   }
   @media (max-width: 420px){
     .title{

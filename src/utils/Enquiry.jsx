@@ -112,7 +112,7 @@ const Container = styled.div`
     padding: 2% 5%;
   }
   .enquiry-title {
-    font-size: 40px;
+    font-size: 25px;
     font-family: "Kanit";
     font-weight: 700;
     color: gray;
@@ -126,8 +126,8 @@ const Container = styled.div`
     padding: 2% 0%;
   }
   .input-box {
-    width: 500px;
-    height: 30px;
+    width: 400px;
+    height: 25px;
     padding: 1% 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
     outline: none;
@@ -136,8 +136,8 @@ const Container = styled.div`
     font-family: "Rubik";
   }
   textarea {
-    width: 500px;
-    height: 80px;
+    width: 400px;
+    height: 70px;
     padding: 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
     outline: none;
@@ -153,8 +153,8 @@ const Container = styled.div`
     background-color: rgba(67, 184, 3, 0.72);
     color: white;
     font-family: "Poppins";
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
   }
   .submit: hover {
     background-color: rgba(128, 128, 128, 0);

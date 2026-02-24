@@ -64,7 +64,7 @@ const Corelist = [
         width: 100%;
       }
       .typed1{
-        font-size: 45px;
+        font-size: 35px;
         background: linear-gradient(97.24deg,rgb(63, 212, 50) 44.37%, rgba(160, 207, 167, 0.25) 113.02%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -83,16 +83,16 @@ const Corelist = [
       .core-main {
         position: relative;
         text-align: center;
-        padding: 2%;
+        padding: 1.5%;
         justify-content: space-between;
         
       }
       .core-details-main{
-        padding: 10%;
+        padding: 5% 9%;
       }
       .core-details {
-        width: 220px;
-        height: 180px;
+        width: 180px;
+        height: 140px;
         color: #ffffffff;
         background: rgb(63, 212, 50) 44.37%;
         display: flex;
@@ -106,12 +106,12 @@ const Corelist = [
       }
     
       .core-details h1 {
-        font-size: 30px;
+        font-size: 23px;
         padding-bottom: 10px;
         font-family: 'Poppins';
       }
       .core-details p {
-        font-size: 15px;
+        font-size: 13px;
         font-family: 'Kanit';
       }
     `;

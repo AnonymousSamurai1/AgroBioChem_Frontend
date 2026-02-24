@@ -62,13 +62,13 @@ const Container = styled.div`
       text-fill-color: transparent;
       font-weight: bolder;
       font-family: "Poppins", sans-serif;
-      padding: 25%;
+      padding: 0% 10%;
     }
     h6 {
       color: rgb(71, 71, 71);
-      font-size: 15px;
-      padding: 5% 0%;
-      text-align: left;
+      font-size: 12px;
+      padding: 5% 5% 5% 10%;
+      text-align: initial;
       font-family: "Poppins", sans-serif;
     }
   }

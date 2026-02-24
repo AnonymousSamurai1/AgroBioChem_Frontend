@@ -474,13 +474,13 @@ const Container = styled.div`
 
   h3 {
     color: #66b302;
-    font-size: 40px;
+    font-size: 30px;
     padding: 18% 10% 5% 10%;
     font-family: 'Poppins', sans-serif;
   }
   h4 {
     color: #66b302;
-    font-size: 40px;
+    font-size: 30px;
     padding: 18% 10% 5% 31%;
     font-family: 'Poppins', sans-serif;
   }

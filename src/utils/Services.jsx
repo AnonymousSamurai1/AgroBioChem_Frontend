@@ -75,7 +75,7 @@ const Container = styled.div`
     padding: 0% 41%;
   }
   .typed1 {
-    font-size: 45px;
+    font-size: 35px;
     background: linear-gradient(
       97.24deg,
       rgb(63, 212, 50) 44.37%,
@@ -92,7 +92,7 @@ const Container = styled.div`
   .service {
     display: flex;
     flex-wrap: wrap;
-    padding: 2% 6%;
+    padding: 1% 6%;
     width: 100%;
     max-height: 500px;
     overflow-y: auto;
@@ -100,22 +100,22 @@ const Container = styled.div`
   .service-main {
     position: relative;
     text-align: center;
-    padding: 2%;
+    padding: 1.7%;
     :hover {
       cursor: pointer;
       transform: scale(1.1);
     }
   }
   .service-image {
-    width: 240px;
-    height: 200px;
+    width: 200px;
+    height: 160px;
     transition: 0.3s ease;
   }
   .service-details {
     position: absolute;
-    top: 7.5%;
-    width: 220px;
-    height: 180px;
+    top: 7%;
+    width: 180px;
+    height: 140px;
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
     display: flex;
@@ -125,13 +125,13 @@ const Container = styled.div`
     padding: 10px;
   }
   .service-details h1 {
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
     font-family: "Kanit";
   }
 
   .service-details p {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   @media (max-width: 420px) {
