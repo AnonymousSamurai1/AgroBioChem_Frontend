@@ -520,7 +520,7 @@ const Container = styled.div`
   .cancel {
     float: right;
     padding: 2% 1%;
-    width: 30px;
+    width: 20px;
     :hover {
       cursor: pointer;
     }

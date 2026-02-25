@@ -332,7 +332,7 @@ const Container = styled.div`
     padding: 2% 50%;
   }
   .inputs {
-      width: 500px;
+      width: 300px;
       height: 35px;
       border: 2px solid rgba(128, 128, 128, 0.91);
       outline: none;
@@ -390,8 +390,8 @@ const Container = styled.div`
     position: absolute;
     top: 16px;      
     right: 16px;    
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     z-index: 10;
 }
@@ -425,7 +425,7 @@ const Container = styled.div`
     padding: 2% 0%;
     }
   .input-box{
-    width: 700px;
+    width: 570px;
     height: 30px;
     padding: 1% 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
@@ -440,7 +440,7 @@ const Container = styled.div`
     cursor: pointer;
   }
   textarea{
-    width: 700px;
+    width: 570px;
     height: 80px;
     padding: 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
@@ -456,7 +456,7 @@ const Container = styled.div`
     font-weight: normal;
   }
   .input-box-sub{
-    width: 350px;
+    width: 250px;
     height: 60px;
     padding: 1% 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
@@ -479,7 +479,7 @@ const Container = styled.div`
       background: #f9fafb;
       cursor: pointer;
       transition: border 0.2s ease, box-shadow 0.2s ease;
-      width: 700px;
+      width: 570px;
       border: 2px solid rgba(128, 128, 128, 0.81);
     }
 
@@ -509,7 +509,7 @@ const Container = styled.div`
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
     }
     .input-submit{
-      width: 730px;
+      width: 600px;
       height: 60px;
       border: none;
       border-radius: 10px;

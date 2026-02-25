@@ -13,7 +13,7 @@ function Fertilizer(props) {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/"
+        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/",
       );
 
       if (!res.ok) {
@@ -27,7 +27,7 @@ function Fertilizer(props) {
         const fertilizer = data.data.filter(
           (item) =>
             item.category &&
-            "fertilizer".includes(item.category.trim().toLowerCase())
+            "fertilizer".includes(item.category.trim().toLowerCase()),
         );
 
         setProducts(fertilizer);
@@ -53,7 +53,7 @@ function Fertilizer(props) {
     setDetail(true);
     try {
       const res = await fetch(
-        `https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/${id}`
+        `https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/${id}`,
       );
       const data = await res.json();
 
@@ -73,7 +73,7 @@ function Fertilizer(props) {
       setFilteredProducts(products);
     } else {
       const filtered = products.filter((p) =>
-        p.name.toLowerCase().includes(value.toLowerCase())
+        p.name.toLowerCase().includes(value.toLowerCase()),
       );
       setFilteredProducts(filtered);
     }
@@ -173,11 +173,11 @@ function Fertilizer(props) {
 const Container = styled.div`
   .search-bar {
     margin-top: 3%;
-    padding: 1% 10%;
+    padding: 1% 5%;
   }
   .search {
-    width: 700px;
-    height: 35px;
+    width: 680px;
+    height: 30px;
     padding: 1% 0%;
     border: none;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
@@ -214,8 +214,8 @@ const Container = styled.div`
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     z-index: 10;
   }
@@ -223,6 +223,7 @@ const Container = styled.div`
     transform: scale(1.1);
   }
   .productsGrid {
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -243,7 +244,7 @@ const Container = styled.div`
   .productCard {
     border-radius: 10px;
     width: 100%;
-    padding: 3%;
+    padding: 10%;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
     :hover {
       cursor: pointer;
@@ -256,23 +257,24 @@ const Container = styled.div`
     }
   }
   .productImg {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
   }
   .productDetail-main {
     display: flex;
-    padding: 15% 10%;
+    padding: 12% 8%;
     justify-content: space-between;
     img {
-      width: 300px;
-      height: 350px;
+      padding: 14% 0%;
+      width: 230px;
+      height: 270px;
       border: none;
     }
   }
   .title {
     font-family: Poppins;
     color: gray;
-    font-size: 18px;
+    font-size: 15px;
     padding: 2% 0%;
     width: 100%;
     text-align: center;
@@ -280,30 +282,18 @@ const Container = styled.div`
   .product-title {
     text-align: center;
     color: grey;
-    font-size: 40px;
+    font-size: 30px;
     font-family: Kanit;
   }
   .product-description {
     padding: 7% 5%;
     width: 100%;
-    font-size: 13px;
+    font-size: 11px;
     text-align: justify;
     font-family: Poppins;
   }
-  .product-category {
-    padding: 1% 5%;
-    width: 100%;
-    font-size: 12px;
-    text-align: justify;
-    font-family: Poppins;
-  }
-  .product-sub-category {
-    padding: 1% 5%;
-    width: 100%;
-    font-size: 12px;
-    text-align: justify;
-    font-family: Poppins;
-  }
+  .product-category,
+  .product-sub-category,
   .product-ingredient {
     padding: 1% 5%;
     width: 100%;

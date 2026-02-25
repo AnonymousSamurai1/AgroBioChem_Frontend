@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Fade } from "react-reveal";
 import styled from "styled-components";
-import Cancel from "../assets/cancel_1.png"
+import Cancel from "../assets/cancel_1.png";
 
 function AllProducts(props) {
   const [detail, setDetail] = useState(false);
@@ -14,7 +14,7 @@ function AllProducts(props) {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/"
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/",
       );
 
       if (!res.ok) {
@@ -44,7 +44,7 @@ function AllProducts(props) {
     setDetail(true);
     try {
       const res = await fetch(
-        `https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/${id}`
+        `https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/${id}`,
       );
       const data = await res.json();
 
@@ -64,7 +64,7 @@ function AllProducts(props) {
       setFilteredProducts(products);
     } else {
       const filtered = products.filter((p) =>
-        p.name.toLowerCase().includes(value.toLowerCase())
+        p.name.toLowerCase().includes(value.toLowerCase()),
       );
       setFilteredProducts(filtered);
     }
@@ -131,7 +131,7 @@ function AllProducts(props) {
                       onClick={() => setDetail(false)}
                     />
                   </div>
-                  
+
                   <div className="imageDetails">
                     {selectedProduct.image && (
                       <img
@@ -143,7 +143,11 @@ function AllProducts(props) {
 
                   <div className="detail-description">
                     <div className="cancel_image">
-                      <img src={Cancel} alt="cancel" onClick={() => setDetail(false)}/>
+                      <img
+                        src={Cancel}
+                        alt="cancel"
+                        onClick={() => setDetail(false)}
+                      />
                     </div>
                     <div className="detail-image">
                       {selectedProduct.image && (
@@ -180,7 +184,7 @@ function AllProducts(props) {
 }
 
 const Container = styled.div`
-display: block;
+  display: block;
   .search-bar {
     margin-top: 3%;
     padding: 1% 5%;
@@ -210,11 +214,11 @@ display: block;
   .cancelProduct:hover {
     transform: scale(1.1);
   }
-  .cancelDetail{
-    display:none;
+  .cancelDetail {
+    display: none;
   }
   .productsGrid {
-  width: 94%;
+    width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -229,7 +233,7 @@ display: block;
     }
   }
   .carder {
-    padding: 2% 0%;
+    padding: 2% 4%;
   }
   .productCard {
     border-radius: 10px;
@@ -270,7 +274,6 @@ display: block;
     display: flex;
     flex-direction: column;
     position: relative;
-    
   }
   .productDetail-main {
     display: flex;
@@ -319,7 +322,7 @@ display: block;
   span {
     color: #008a09ff;
   }
-  .cancel_image{
+  .cancel_image {
     display: none;
   }
 
@@ -342,16 +345,16 @@ display: block;
     .productCard {
       width: 359px;
       :hover {
-      cursor: pointer;
-      transform: none;
-    }
+        cursor: pointer;
+        transform: none;
+      }
     }
     .productImg {
       width: 360px;
       height: 300px;
       border-radius: 30px;
     }
-    .title{
+    .title {
       font-size: 30px;
     }
 
@@ -360,10 +363,10 @@ display: block;
     }
 
     .detail-image {
-      display: block ;
+      display: block;
       width: 200px;
       height: 200px;
-      padding: 0% 12% 20% 12% ;
+      padding: 0% 12% 20% 12%;
       border: none;
     }
     .detail-image img {
@@ -375,7 +378,7 @@ display: block;
       display: block;
       padding: 0% 0%;
     }
-    
+
     .inputMain {
       position: absolute;
       top: 0;
@@ -398,15 +401,15 @@ display: block;
       display: block;
       padding: 0% 0%;
     }
-    .detail-description{
-      display: block 
+    .detail-description {
+      display: block;
     }
     .product-title {
-    text-align: center;
-    color: grey;
-    font-size: 40px;
-    font-family: Kanit;
-  }
+      text-align: center;
+      color: grey;
+      font-size: 40px;
+      font-family: Kanit;
+    }
     .product-title {
       padding: 10% 0% 0% 0%;
     }
@@ -426,17 +429,17 @@ display: block;
       z-index: 10;
       display: none;
     }
-    .cancel_image{
-    display: block;
-    width: 30px;
-    height: 30px;
-    float: right;
-    padding: 1%;
-    img{
-      width: 20px;
-      height: 20px;
+    .cancel_image {
+      display: block;
+      width: 30px;
+      height: 30px;
+      float: right;
+      padding: 1%;
+      img {
+        width: 20px;
+        height: 20px;
+      }
     }
-  }
   }
 `;
 
