@@ -16,7 +16,7 @@ function Enquiry(props) {
       question: question,
     };
     const result = await fetch(
-      "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/questions/",
+      "https://agrobiochemsbackend.vercel.app/agrobiochem/api/questions/",
       {
         method: "POST",
         headers: {

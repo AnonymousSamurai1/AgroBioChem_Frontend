@@ -19,7 +19,7 @@ function AuthenticationUtils(props) {
 
     try {
       const res = await fetch(
-        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/keys/login",
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/keys/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -78,10 +78,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   .logo-main {
-    width: 600px;
+    width: 500px;
   }
   .key-sub {
-    padding: 5% 20%;
+    padding: 5% 5%;
     .key {
       width: 380px;
       height: 55px;
@@ -100,7 +100,7 @@ const Container = styled.div`
     }
   }
   .key-sub1 {
-    padding: 5% 33%;
+    padding: 5% 22%;
     .key-button {
       width: 300px;
       height: 55px;
@@ -123,7 +123,7 @@ const Container = styled.div`
   }
   .link {
     width: 100%;
-    padding: 0% 8%;
+    padding: 0% 3%;
   }
   .link-main {
     text-decoration: none;

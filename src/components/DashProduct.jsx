@@ -43,7 +43,7 @@ function DashProducts() {
       formData.append('image', image);
 
       const res = await fetch(
-        'https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/',
+        'https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/',
         {
           method: 'POST',
           body: formData,

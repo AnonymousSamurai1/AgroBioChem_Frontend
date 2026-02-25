@@ -34,7 +34,7 @@ const Credentials = () => {
 
     try {
       const res = await fetch(
-        'https://agro-bio-chem-backend.vercel.app/agrobiochem/api/admins/login',
+        'https://agrobiochemsbackend.vercel.app/agrobiochem/api/admins/login',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -76,7 +76,7 @@ const Credentials = () => {
     }
 
     try {
-      const res = await fetch('https://agro-bio-chem-backend.vercel.app/agrobiochem/api/admins/', {
+      const res = await fetch('https://agrobiochemsbackend.vercel.app/agrobiochem/api/admins/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -272,8 +272,8 @@ const Container = styled.div`
     width: 100%;
   }
   .logo {
-    width: 600px;
-    padding: 40% 10% 10% 10%;
+    width: 500px;
+    padding: 35% 10% 10% 10%;
   }
   .credentials {
     background: green;
@@ -284,8 +284,8 @@ const Container = styled.div`
     color: white;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    padding: 20% 0% 3% 0%;
-    font-size: 50px;
+    padding: 15% 0% 2% 7%;
+    font-size: 40px;
   }
   .login {
     padding: 0% 16%;
@@ -328,7 +328,7 @@ const Container = styled.div`
     transform: scale(1.1);
   }
   .register-link {
-    text-align: center;
+    padding: 0% 20% 0% 37%;
     color: white;
     font-family: 'Poppins', sans-serif;
     span {
@@ -350,8 +350,8 @@ const Container = styled.div`
     color: white;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    padding: 5% 0% 1% 0%;
-    font-size: 50px;
+    padding: 3% 0% 1% 0%;
+    font-size: 40px;
   }
   .credential-main1 {
     display: flex;
@@ -359,7 +359,7 @@ const Container = styled.div`
     padding: 4% 0%;
     input {
       width: 400px;
-      height: 50px;
+      height: 40px;
       padding: 0% 3%;
       border: none;
       border-radius: 10px;
@@ -375,8 +375,8 @@ const Container = styled.div`
     .date {
       padding: 0% 10%;
       input {
-        width: 200px;
-        height: 50px;
+        width: 170px;
+        height: 40px;
         padding: 0% 5%;
         border: none;
         border-radius: 10px;
@@ -389,7 +389,7 @@ const Container = styled.div`
       padding: 0% 10%;
       .gender {
         width: 200px;
-        height: 50px;
+        height: 40px;
         padding: 0% 10% 0% 5%;
         border: none;
         border-radius: 10px;
@@ -405,7 +405,7 @@ const Container = styled.div`
       }
       input {
         width: 190px;
-        height: 50px;
+        height: 40px;
         padding: 0% 0% 0% 5%;
         border: none;
         border-radius: 10px;
@@ -422,13 +422,13 @@ const Container = styled.div`
     }
   }
   .submit1 {
-    padding: 3% 23%;
+    padding: 2% 23%;
     .login-button {
       width: 300px;
-      height: 55px;
+      height: 45px;
       border: none;
       border-radius: 10px;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: bold;
       color: green;
     }

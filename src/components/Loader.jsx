@@ -59,7 +59,7 @@ const Container = styled.div`
   }
 
   .imageloader {
-    width: 700px;
+    width: 500px;
   }
 
   .barloader {

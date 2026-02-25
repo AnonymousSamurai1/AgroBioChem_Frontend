@@ -50,17 +50,23 @@ const Container = styled.div`
     position: absolute;
     top: 30%;
     left: 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .main_loader {
     margin-bottom: 10%;
   }
+
   .imageloader {
-    width: 700px;
+    width: 500px;
   }
+
   .barloader {
-    position: absolute;
-    left: 40%;
+    position: relative;
   }
+
   @media (max-width: 760px) {
     .loader {
       top: 30%;
