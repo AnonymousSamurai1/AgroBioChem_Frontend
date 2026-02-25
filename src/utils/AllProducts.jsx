@@ -14,7 +14,7 @@ function AllProducts(props) {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "hhttps://agrobiochemsbackend.vercel.app/agrobiochem/api/products/"
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/"
       );
 
       if (!res.ok) {

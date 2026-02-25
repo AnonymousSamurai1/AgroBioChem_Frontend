@@ -53,7 +53,7 @@ function Fertilizer(props) {
     setDetail(true);
     try {
       const res = await fetch(
-        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`
+        `https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/${id}`
       );
       const data = await res.json();
 

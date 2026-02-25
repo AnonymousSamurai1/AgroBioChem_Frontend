@@ -13,7 +13,7 @@ function CropProtection(props) {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/"
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/"
       );
 
       if (!res.ok) {
