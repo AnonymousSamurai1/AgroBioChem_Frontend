@@ -183,11 +183,11 @@ const Container = styled.div`
 display: block;
   .search-bar {
     margin-top: 3%;
-    padding: 1% 10%;
+    padding: 1% 5%;
   }
   .search {
-    width: 700px;
-    height: 35px;
+    width: 680px;
+    height: 30px;
     padding: 1% 0%;
     border: none;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
@@ -202,8 +202,8 @@ display: block;
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     z-index: 10;
   }
@@ -214,6 +214,7 @@ display: block;
     display:none;
   }
   .productsGrid {
+  width: 94%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -228,12 +229,12 @@ display: block;
     }
   }
   .carder {
-    padding: 2% 4%;
+    padding: 2% 0%;
   }
   .productCard {
     border-radius: 10px;
     width: 100%;
-    padding: 3%;
+    padding: 10%;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
     :hover {
       cursor: pointer;
@@ -246,8 +247,8 @@ display: block;
     }
   }
   .productImg {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
   }
   .inputMain {
     position: absolute;
@@ -273,11 +274,12 @@ display: block;
   }
   .productDetail-main {
     display: flex;
-    padding: 15% 10%;
+    padding: 12% 8%;
     justify-content: space-between;
     img {
-      width: 300px;
-      height: 350px;
+      padding: 14% 0%;
+      width: 230px;
+      height: 270px;
       border: none;
     }
   }
@@ -287,7 +289,7 @@ display: block;
   .title {
     font-family: Poppins;
     color: gray;
-    font-size: 18px;
+    font-size: 15px;
     padding: 2% 0%;
     width: 100%;
     text-align: center;
@@ -295,13 +297,13 @@ display: block;
   .product-title {
     text-align: center;
     color: grey;
-    font-size: 40px;
+    font-size: 30px;
     font-family: Kanit;
   }
   .product-description {
     padding: 7% 5%;
     width: 100%;
-    font-size: 13px;
+    font-size: 11px;
     text-align: justify;
     font-family: Poppins;
   }
