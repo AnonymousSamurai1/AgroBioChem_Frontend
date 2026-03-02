@@ -200,7 +200,8 @@ function DashProducts() {
                       onChange={(e) => setCategory(e.target.value)}
                     >
                       <option value="">Select Category</option>
-                      <option value="Herbicide">Herbicide</option>
+                      <option value="Herbicide">Herbicide (Selective)</option>
+                      <option value="Herbicide">Herbicide (Non-Selective)</option>
                       <option value="Fungicide">Fungicide</option>
                       <option value="Fertilizer">Fertilizer</option>
                       <option value="Others">Others</option>
@@ -475,7 +476,7 @@ const Container = styled.div`
     font-weight: normal;
   }
   .input-box-sub{
-    width: 250px;
+    width: 595px;
     height: 60px;
     padding: 1% 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
