@@ -1,82 +1,93 @@
-import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
-import addImage from '../assets/Add.png';
-import Remove from '../assets/cancel_1.png';
-import { Fade } from 'react-reveal';
-import { toast } from 'react-toastify';
+import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
+import addImage from "../assets/Add.png";
+import Remove from "../assets/cancel_1.png";
+import { Fade } from "react-reveal";
+import { toast } from "react-toastify";
 
 function DashProducts() {
   const [loader, setLoader] = useState(false);
   const [detail, setDetail] = useState(false);
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('');
-  const [categoryType, setCategoryType] = useState('');
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [activeIngredient, setActiveIngredient] = useState("");
   const [image, setImage] = useState(null);
-  const [ingredient, setIngredient] = useState('');
+  const [dosage, setDosage] = useState("");
+  const [packageSize, setPackageSize] = useState("");
 
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const fileInputRef = useRef(null);
 
   const handleToggleIn = () => setLoader(true);
   const handleToggleOut = () => setLoader(false);
-  
+
   const handleProduct = async (event) => {
     event.preventDefault();
 
-    if (!name || !description || !category || !image || !ingredient) {
-      toast.error('Please fill all the fields');
+    if (
+      !name ||
+      !description ||
+      !category ||
+      !activeIngredient ||
+      !image ||
+      !dosage ||
+      !packageSize
+    ) {
+      toast.error("Please fill all the fields");
       return;
     }
 
     try {
       const formData = new FormData();
-      formData.append('name', name);
-      formData.append('description', description);
-      formData.append('category', category);
-      formData.append('categoryType', categoryType);
-      formData.append('ingredient', ingredient);
-      formData.append('image', image);
+      formData.append("name", name);
+      formData.append("description", description);
+      formData.append("category", category);
+      formData.append("activeIngredient", activeIngredient);
+      formData.append("image", image);
+      formData.append("dosage", dosage);
+      formData.append("packageSize", packageSize);
 
       const res = await fetch(
-        'https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/',
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/",
         {
-          method: 'POST',
+          method: "POST",
           body: formData,
-        }
+        },
       );
 
       const data = await res.json();
 
       if (data.success) {
-        toast.success('Product successfully created');
+        toast.success("Product successfully created");
         setLoader(false);
-        setName('');
-        setDescription('');
-        setCategory('');
-        setCategoryType('');
+        setName("");
+        setDescription("");
+        setCategory("");
+        setActiveIngredient("");
         setImage(null);
-        setIngredient('');
+        setDosage("");
+        setPackageSize("");
 
         if (fileInputRef.current) {
           fileInputRef.current.value = null;
         }
       } else {
-        toast.error(data.message || 'Product creation failed');
+        toast.error(data.message || "Product creation failed");
       }
     } catch (error) {
-      toast.error('Something went wrong during product creation');
+      toast.error("Something went wrong during product creation");
     }
   };
 
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        'https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/'
+        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/",
       );
 
       if (!res.ok) {
@@ -84,7 +95,7 @@ function DashProducts() {
       }
 
       const data = await res.json();
-      console.log('API response:', data);
+      console.log("API response:", data);
 
       if (data.success && Array.isArray(data.data)) {
         setProducts(data.data);
@@ -92,13 +103,13 @@ function DashProducts() {
       } else {
         setProducts([]);
         setFilteredProducts([]);
-        toast.error(data.message || 'No products available');
+        toast.error(data.message || "No products available");
       }
     } catch (error) {
-      console.error('Fetch error:', error);
+      console.error("Fetch error:", error);
       setProducts([]);
       setFilteredProducts([]);
-      toast.error('Unable to fetch products. Please check your server.');
+      toast.error("Unable to fetch products. Please check your server.");
     }
   };
 
@@ -106,27 +117,27 @@ function DashProducts() {
     setDetail(true);
     try {
       const res = await fetch(
-        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`
+        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`,
       );
       const data = await res.json();
 
       if (data.success) {
         setSelectedProduct(data.data);
       } else {
-        toast.error(data.message || 'Failed to fetch product details');
+        toast.error(data.message || "Failed to fetch product details");
       }
     } catch (error) {
-      toast.error('Something went wrong while fetching details');
+      toast.error("Something went wrong while fetching details");
     }
   };
 
   const handleSearch = (value) => {
     setSearch(value);
-    if (value.trim() === '') {
+    if (value.trim() === "") {
       setFilteredProducts(products);
     } else {
       const filtered = products.filter((p) =>
-        p.name.toLowerCase().includes(value.toLowerCase())
+        p.name.toLowerCase().includes(value.toLowerCase()),
       );
       setFilteredProducts(filtered);
     }
@@ -181,31 +192,19 @@ function DashProducts() {
                       onChange={(e) => setDescription(e.target.value)}
                     />
                   </div>
-                  <div className="category">
-                    <div className="main-input">
-                      <select
-                        className="input-box-sub"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                      >
-                        <option value="">Select Category</option>
-                        <option value="Herbicide">Herbicide</option>
-                        <option value="Fungicide">Fungicide</option>
-                        <option value="Fertilizer">Fertilizer</option>
-                        <option value="Others">Others</option>
-                      </select>
-                    </div>
-                    <div className="main-input">
-                      <select
-                        className="input-box-sub"
-                        value={categoryType}
-                        onChange={(e) => setCategoryType(e.target.value)}
-                      >
-                        <option value="">Select Sub-Category</option>
-                        <option value="Selective">Selective</option>
-                        <option value="Non-Selective">Non-Selective</option>
-                      </select>
-                    </div>
+
+                  <div className="main-input">
+                    <select
+                      className="input-box-sub"
+                      value={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                    >
+                      <option value="">Select Category</option>
+                      <option value="Herbicide">Herbicide</option>
+                      <option value="Fungicide">Fungicide</option>
+                      <option value="Fertilizer">Fertilizer</option>
+                      <option value="Others">Others</option>
+                    </select>
                   </div>
 
                   <div className="main-input">
@@ -221,13 +220,33 @@ function DashProducts() {
                   </div>
 
                   <div className="main-input">
-                    <label>Product Ingredients</label>
+                    <label>Product Ingredient:</label>
                     <input
                       type="text"
                       className="input-box"
-                      placeholder="Enter product ingredients"
-                      value={ingredient}
-                      onChange={(e) => setIngredient(e.target.value)}
+                      placeholder="Enter product ingredient"
+                      value={activeIngredient}
+                      onChange={(e) => setActiveIngredient(e.target.value)}
+                    />
+                  </div>
+                  <div className="main-input">
+                    <label>Dosage:</label>
+                    <input
+                      type="text"
+                      className="input-box"
+                      placeholder="Enter product ingredient"
+                      value={dosage}
+                      onChange={(e) => setDosage(e.target.value)}
+                    />
+                  </div>
+                  <div className="main-input">
+                    <label>Package Size:</label>
+                    <input
+                      type="text"
+                      className="input-box"
+                      placeholder="Enter product ingredient"
+                      value={packageSize}
+                      onChange={(e) => setPackageSize(e.target.value)}
                     />
                   </div>
 
@@ -465,10 +484,6 @@ const Container = styled.div`
     border-radius: 10px;
     font-family: 'Rubik';
   }
-  .category{
-    display: flex;
-    justify-content: space-between;
-  }
     .input-file {
       font-family: inherit;
       font-size: 14px;
@@ -567,6 +582,6 @@ const Container = styled.div`
     height: 400px;
   }
 }
-`
+`;
 
 export default DashProducts;

@@ -150,11 +150,14 @@ function Fertilizer(props) {
                     <p className="product-category">
                       <span>Category:</span> {selectedProduct.category}
                     </p>
-                    <p className="product-sub-category">
-                      <span>Sub-Category:</span> {selectedProduct.categoryType}
+                    <p className="product-ingredient">
+                      <span>Active Ingredient:</span> {selectedProduct.activeIngredient}
                     </p>
                     <p className="product-ingredient">
-                      <span>Ingredients:</span> {selectedProduct.ingredient}
+                      <span>Dosage:</span> {selectedProduct.dosage}
+                    </p>
+                    <p className="product-ingredient">
+                      <span>Package Size:</span> {selectedProduct.packageSize}
                     </p>
                   </div>
                 </div>

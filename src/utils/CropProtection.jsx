@@ -13,7 +13,7 @@ function CropProtection(props) {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/"
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/",
       );
 
       if (!res.ok) {
@@ -28,8 +28,8 @@ function CropProtection(props) {
           (item) =>
             item.category &&
             ["fungicide", "herbicide"].includes(
-              item.category.trim().toLowerCase()
-            )
+              item.category.trim().toLowerCase(),
+            ),
         );
 
         setProducts(fungicideHerbicide);
@@ -55,7 +55,7 @@ function CropProtection(props) {
     setDetail(true);
     try {
       const res = await fetch(
-        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`
+        `https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/${id}`,
       );
       const data = await res.json();
 
@@ -75,7 +75,7 @@ function CropProtection(props) {
       setFilteredProducts(products);
     } else {
       const filtered = products.filter((p) =>
-        p.name.toLowerCase().includes(value.toLowerCase())
+        p.name.toLowerCase().includes(value.toLowerCase()),
       );
       setFilteredProducts(filtered);
     }
@@ -146,10 +146,22 @@ function CropProtection(props) {
                   </div>
                   <div className="detail-description">
                     <h2 className="product-title">{selectedProduct.name}</h2>
-                    <p className= "product-description">{selectedProduct.description}</p>
-                    <p className="product-category"><span>Category:</span> {selectedProduct.category}</p>
-                    <p className="product-sub-category"><span>Sub-Category:</span> {selectedProduct.categoryType}</p>
-                    <p className="product-ingredient"><span>Ingredients:</span> {selectedProduct.ingredient}</p>
+                    <p className="product-description">
+                      {selectedProduct.description}
+                    </p>
+                    <p className="product-category">
+                      <span>Category:</span> {selectedProduct.category}
+                    </p>
+                    <p className="product-ingredient">
+                      <span>Active Ingredient:</span>{" "}
+                      {selectedProduct.activeIngredient}
+                    </p>
+                    <p className="product-ingredient">
+                      <span>Dosage:</span> {selectedProduct.dosage}
+                    </p>
+                    <p className="product-ingredient">
+                      <span>Package Size:</span> {selectedProduct.packageSize}
+                    </p>
                   </div>
                 </div>
               ) : (
@@ -244,7 +256,7 @@ const Container = styled.div`
       cursor: pointer;
       transform: scale(1.1);
     }
-    p{
+    p {
       color: grey;
       font-size: 12px;
       font-family: Kanit;
@@ -273,13 +285,13 @@ const Container = styled.div`
     width: 100%;
     text-align: center;
   }
-  .product-title{
+  .product-title {
     text-align: center;
     color: grey;
     font-size: 30px;
     font-family: Kanit;
   }
-  .product-description{
+  .product-description {
     padding: 7% 5%;
     width: 100%;
     font-size: 11px;
@@ -288,14 +300,14 @@ const Container = styled.div`
   }
   .product-category,
   .product-sub-category,
-  .product-ingredient{
+  .product-ingredient {
     padding: 1% 5%;
     width: 100%;
     font-size: 12px;
     text-align: justify;
     font-family: Poppins;
   }
-  span{
+  span {
     color: #008a09ff;
   }
 `;
