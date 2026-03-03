@@ -407,7 +407,7 @@ const Container = styled.div`
   padding-left: 5%;
   padding-top: 3%;
   .containers {
-   padding: 3% 32% 5% 32%;
+   padding: 3% 33% 5% 33%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -437,18 +437,17 @@ const Container = styled.div`
   }
   .home-sub-a {
     background: white;
-    height: 100%;
+    height: 110%;
     z-index: 3;
     width: 20%;
     border-radius: 0% 50% 50% 0%;
   }
   .home-sub-b {
     background: white;
-    height: 103%;
+    height: 110%;
     z-index: 3;
     border-radius: 50% 0% 0% 50%;
-    min-width: 250px;
-    max-width: 400px;
+    width: 20%;
   }
   .bar {
     width: 100px;

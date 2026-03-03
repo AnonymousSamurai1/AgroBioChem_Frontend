@@ -229,7 +229,7 @@ const Container = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
     outline: none;
-    scrollbar-width: 1px;
+    scrollbar-width: none;
     .paragraph {
       font-family: "Kanit";
       color: gray;

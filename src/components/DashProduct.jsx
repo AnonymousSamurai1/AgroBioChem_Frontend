@@ -210,7 +210,7 @@ function DashProducts() {
                         Herbicide (Non-Selective)
                       </option>
                       <option value="Fungicide">Fungicide</option>
-                      <option value="Fungicide">Insecticide</option>
+                      <option value="insecticide">Insecticide</option>
                       <option value="Fertilizer">Fertilizer</option>
                       <option value="Others">Others</option>\
                     </select>
@@ -434,8 +434,12 @@ const Container = styled.div`
 }
   .productInput{
     flex: 1;
-    overflow-y: auto; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    outline: none;
+    scrollbar-width: none;
     padding: 0% 2%;
+    border-radius: 20px;
       h1{
         text-align: center;
         font-family: "Kanit";
@@ -445,18 +449,9 @@ const Container = styled.div`
         padding-right: 8px; 
       }
     }
-    .productInput::-webkit-scrollbar {
-      width: 6px;
-    }
-    .productInput::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 10px;
-    }
-    .productInput::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
+    
     .main-input{
-    padding: 2% 0%;
+      padding: 2% 0%;
     }
   .input-box{
     width: 570px;
@@ -479,9 +474,13 @@ const Container = styled.div`
     padding: 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
     outline: none;
+    color: gray;
     resize: none;
     border-radius: 10px;
-    font-family: 'Rubik';
+    font-family: 'Poppins', sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
   }
   label{
     font-family: "Kanit";
@@ -495,14 +494,18 @@ const Container = styled.div`
     padding: 1% 2%;
     border: 2px solid rgba(128, 128, 128, 0.81);
     outline: none;
+    color: gray;
     resize: none;
     border-radius: 10px;
-    font-family: 'Rubik';
+    font-family: 'Poppins', sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
   }
     .input-file {
-      font-family: inherit;
+      font-family: 'Poppins', sans-serif;
       font-size: 14px;
-      color: #555;
+      color: gray;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 12px;
@@ -549,9 +552,7 @@ const Container = styled.div`
       font-size: 20px;
       :hover{
         cursor: pointer;
-        color: #44B302;
-        border: 2px solid #44B302;
-        background: #ffffff03;
+        color: #ffffff;
       }
   }
       .spinner {

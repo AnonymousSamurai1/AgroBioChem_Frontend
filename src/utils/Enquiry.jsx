@@ -133,7 +133,12 @@ const Container = styled.div`
     outline: none;
     resize: none;
     border-radius: 10px;
-    font-family: "Rubik";
+    color: gray;
+    font-family: 'Poppins', sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
   }
   textarea {
     width: 400px;
@@ -143,7 +148,12 @@ const Container = styled.div`
     outline: none;
     resize: none;
     border-radius: 10px;
-    font-family: "Rubik";
+    color: gray;
+    font-family: 'Poppins', sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
   }
   .submit {
     width: 200px;

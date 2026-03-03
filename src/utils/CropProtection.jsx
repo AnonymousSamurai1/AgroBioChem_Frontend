@@ -238,7 +238,7 @@ const Container = styled.div`
     overflow-x: hidden;
     outline: none;
     justify-content: space-around;
-    scrollbar-width: 1px;
+    scrollbar-width: none;
     .paragraph {
       font-family: "Kanit";
       color: gray;
