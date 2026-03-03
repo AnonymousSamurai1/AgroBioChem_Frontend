@@ -15,7 +15,7 @@ function Categories(props) {
 const Container = styled.div`
 .cat{
 display: flex;
-padding: 6% 15%;
+padding: 5% 15%;
 :hover{
     cursor: pointer;
     transform: scale(1.1);

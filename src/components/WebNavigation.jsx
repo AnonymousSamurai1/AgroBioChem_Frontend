@@ -23,10 +23,12 @@ import Enquiry from "../utils/Enquiry";
 import FarmerImage from "../assets/Farmer.png";
 import AllProducts from "../utils/AllProducts";
 import Services from "../utils/Services";
-import CropProtections from "../utils/CropProtection";
+import Herbicides from "../utils/Herbicides";
 import Fertilizer from "../utils/Fertilizer";
 import Supports from "../utils/Supports";
 import CoreValues from "../utils/CoreValues";
+import Insecticides from "../utils/Insecticides";
+import Fungicides from "../utils/Fungicides";
 
 function Navigation() {
   const [home, setHome] = useState(false);
@@ -38,6 +40,9 @@ function Navigation() {
   const [corevalues, setCoreValues] = useState(false);
   const [allproducts, setAllproducts] = useState(false);
   const [cropProtection, setCropProtection] = useState(false);
+  const [herbicides, setHerbicides] = useState(false);
+  const [insecticides, setInsecticides] = useState(false);
+  const [fungicides, setFungicides] = useState(false);
   const [fertilizer, setFertilizer] = useState(false);
   const [location, setLocation] = useState(false);
   const [enquiry, setEnquiry] = useState(false);
@@ -55,6 +60,7 @@ function Navigation() {
   };
   const HandleProductOut = () => {
     setProduct(false);
+    setCropProtection(false);
   };
   const HandleServiceIn = () => {
     setService(true);
@@ -88,18 +94,35 @@ function Navigation() {
   };
   const HandleAllProductsIn = () => {
     setAllproducts(true);
+    setCropProtection(false);
   };
   const HandleAllProductsOut = () => {
     setAllproducts(false);
   };
-  const HandlCropProtectionIn = () => {
-    setCropProtection(true);
+  const HandlCropProtection = () => {
+    setCropProtection((prev) => !prev);
   };
-  const HandleCropProtectionOut = () => {
-    setCropProtection(false);
+  const HandleHerbicidesIn = () => {
+    setHerbicides(true);
+  };
+  const HandleHerbicidesOut = () => {
+    setHerbicides(false);
+  };
+  const HandleInsecticidesIn = () => {
+    setInsecticides(true);
+  };
+  const HandleInsecticidesOut = () => {
+    setInsecticides(false);
+  };
+  const HandleFungicidesIn = () => {
+    setFungicides(true);
+  };
+  const HandleFungicidesOut = () => {
+    setFungicides(false);
   };
   const HandleFertilizerIn = () => {
     setFertilizer(true);
+    setCropProtection(false);
   };
   const HandleFertilizerOut = () => {
     setFertilizer(false);
@@ -287,27 +310,24 @@ function Navigation() {
                     </Fade>
                   </div>
                 )}
-                <div className="cat_align" onClick={HandlCropProtectionIn}>
+                <div className="cat_align_a" onClick={HandlCropProtection}>
                   <Categories
                     img={Vision1}
                     title={"Crop Protection Chemicals"}
                   />
                 </div>
                 {cropProtection && (
-                  <div className="alignment">
-                    <Fade bottom duration={1000}>
-                      <div className="alignment_sub">
-                        <img
-                          src={Cancel}
-                          alt="Cancel"
-                          className="cancel"
-                          onClick={HandleCropProtectionOut}
-                        />
-                        <br />
-                        <CropProtections remove={Cancel} />
-                      </div>
-                    </Fade>
-                  </div>
+                  <Fade top duration={1000}>
+                    <div className="list_down">
+                      <ul>
+                        <li onClick={HandleHerbicidesIn}>Herbicides</li>
+
+                        <li onClick={HandleInsecticidesIn}>Insecticides</li>
+
+                        <li onClick={HandleFungicidesIn}>Fungicides</li>
+                      </ul>
+                    </div>
+                  </Fade>
                 )}
                 <div className="cat_align" onClick={HandleFertilizerIn}>
                   <Categories
@@ -398,6 +418,56 @@ function Navigation() {
           </Fade>
         )}
       </div>
+      {herbicides && (
+        <div className="alignment">
+          <Fade bottom duration={1000}>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleHerbicidesOut}
+              />
+              <br />
+              <Herbicides remove={Cancel} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {insecticides && (
+        <div className="alignment">
+          <Fade bottom duration={1000}>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleInsecticidesOut}
+              />
+              <br />
+              <Insecticides remove={Cancel} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {fungicides && (
+        <div className="alignment">
+          <Fade bottom duration={1000}>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleFungicidesOut}
+              />
+              <br />
+              <Fungicides remove={Cancel} />
+            </div>
+          </Fade>
+        </div>
+      )}
     </Container>
   );
 }
@@ -473,13 +543,13 @@ const Container = styled.div`
 
   h3 {
     color: #66b302;
-    font-size: 30px;
-    padding: 18% 10% 5% 10%;
+    font-size: 25px;
+    padding: 10% 10% 5% 10%;
     font-family: 'Poppins', sans-serif;
   }
   h4 {
     color: #66b302;
-    font-size: 30px;
+    font-size: 25px;
     padding: 18% 10% 5% 31%;
     font-family: 'Poppins', sans-serif;
   }
@@ -490,20 +560,43 @@ const Container = styled.div`
   }
   .cat_right_sub {
     padding: 10% 0%;
+    float: left;
+    justify-content: space-between;
+  }
+  .cat_align_a {
+    display: flex;
+    padding: 0% 5%;
+  }
+  .dropdown {
+    width: 20px;
+    height: 20px;
+    padding: 8% 10% 0% 0%;
+  }
+  .list_down{
+    padding: 3% 30%;
+    li{
+      font-size: 12px;
+      line-height: 20px;
+      color: gray;
+      font-family: Poppins;
+      :hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        color: #66b302;
+      }
+    }
   }
   .alignment {
-    background: rgba(68, 70, 65, 0.81);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
     height: 100vh;
-    z-index: 5;
-    backdrop-filter: blur(30px);
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 5% 20%;
+    background: rgba(68, 70, 65, 0.85);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .alignment_sub {
     background: white;

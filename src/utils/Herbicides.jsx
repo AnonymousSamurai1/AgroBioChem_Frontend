@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Fade } from "react-reveal";
 import styled from "styled-components";
 
-function CropProtection(props) {
+function NonSelectiveHerb(props) {
   const [detail, setDetail] = useState(false);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -24,19 +24,17 @@ function CropProtection(props) {
       console.log("API response:", data);
 
       if (data.success && Array.isArray(data.data)) {
-        const fungicideHerbicide = data.data.filter(
+        const herbicides = data.data.filter(
           (item) =>
             item.category &&
-            ["fungicide", "herbicide", "insecticide"].includes(
-              item.category.trim().toLowerCase(),
-            ),
+            item.category.trim().toLowerCase().startsWith("herbicide"),
         );
 
-        setProducts(fungicideHerbicide);
-        setFilteredProducts(fungicideHerbicide);
+        setProducts(herbicides);
+        setFilteredProducts(herbicides);
 
-        if (fungicideHerbicide.length === 0) {
-          toast.info("No crop protection chemical found.");
+        if (herbicides.length === 0) {
+          toast.info("No herbicide found.");
         }
       } else {
         setProducts([]);
@@ -165,7 +163,7 @@ function CropProtection(props) {
                   </div>
                 </div>
               ) : (
-                <p>Click a product to view details</p>
+                <p className="paragraph">Click a product to view details</p>
               )}
             </div>
           </Fade>
@@ -312,4 +310,4 @@ const Container = styled.div`
     color: #008a09ff;
   }
 `;
-export default CropProtection;
+export default NonSelectiveHerb;
