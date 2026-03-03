@@ -10,6 +10,13 @@ import Contact from "../assets/Contact.png";
 import Categories from "../utils/Categories";
 import Mission1 from "../assets/Mission.png";
 import Vision1 from "../assets/Vision.png";
+import Chemical from "../assets/Chemical.png";
+import Fertilizer1 from "../assets/Fertilizer.png";
+import Package from "../assets/Package.png";
+import Seed from "../assets/Seed.png";
+import ServiceImage from "../assets/Services.png";
+import SupportImage from "../assets/Support.png";
+import CoreImage from "../assets/Core.png"
 import Mission from "../utils/Mission";
 import Vision from "../utils/Vision";
 import Location from "../utils/Location";
@@ -202,7 +209,7 @@ function Navigation() {
                   </div>
                 )}
                 <div className="cat_align" onClick={HandleCoreValuesIn}>
-                  <Categories img={Mission1} title={"Core Values"} />
+                  <Categories img={CoreImage} title={"Core Values"} />
                 </div>
                 {corevalues && (
                   <div className="alignment">
@@ -239,7 +246,7 @@ function Navigation() {
                 <h4>Service</h4>
                 <div className="cat_right">
                   <div className="cat_right_sub" onClick={HandleMainServiceIn}>
-                    <Categories img={Vision1} title={"Services"} />
+                    <Categories img={ServiceImage} title={"Services"} />
                   </div>
                   {mainservices && (
                     <div className="alignment">
@@ -257,7 +264,7 @@ function Navigation() {
                     </div>
                   )}
                   <div className="cat_right_sub" onClick={HandleSupportIn}>
-                    <Categories img={Vision1} title={"Support/Resources"} />
+                    <Categories img={SupportImage} title={"Support/Resources"} />
                   </div>
                   {support && (
                     <div className="alignment">
@@ -292,7 +299,7 @@ function Navigation() {
               <div className="home-sub-a">
                 <h3>Products</h3>
                 <div className="cat_align" onClick={HandleAllProductsIn}>
-                  <Categories img={Mission1} title={"All"} />
+                  <Categories img={Package} title={"All"} />
                 </div>
                 {allproducts && (
                   <div className="alignment">
@@ -312,7 +319,7 @@ function Navigation() {
                 )}
                 <div className="cat_align_a" onClick={HandlCropProtection}>
                   <Categories
-                    img={Vision1}
+                    img={Chemical}
                     title={"Crop Protection Chemicals"}
                   />
                 </div>
@@ -331,7 +338,7 @@ function Navigation() {
                 )}
                 <div className="cat_align" onClick={HandleFertilizerIn}>
                   <Categories
-                    img={Vision1}
+                    img={Fertilizer1}
                     title={"Fertilizer and Plant Nutrients"}
                   />
                 </div>
@@ -352,10 +359,7 @@ function Navigation() {
                   </div>
                 )}
                 <div className="cat_align">
-                  <Categories
-                    img={Vision1}
-                    title={"Seeds and Seed Treatments"}
-                  />
+                  <Categories img={Seed} title={"Seeds and Seed Treatments"} />
                 </div>
               </div>
               <div className="blank" onClick={HandleProductOut}></div>
