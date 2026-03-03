@@ -27,7 +27,7 @@ function CropProtection(props) {
         const fungicideHerbicide = data.data.filter(
           (item) =>
             item.category &&
-            ["fungicide", "herbicide"].includes(
+            ["fungicide", "herbicide", "insecticide"].includes(
               item.category.trim().toLowerCase(),
             ),
         );
@@ -238,7 +238,7 @@ const Container = styled.div`
     overflow-x: hidden;
     outline: none;
     justify-content: space-around;
-    scrollbar-width: none;
+    scrollbar-width: 1px;
     .paragraph {
       font-family: "Kanit";
       color: gray;
@@ -263,8 +263,8 @@ const Container = styled.div`
     }
   }
   .productImg {
-    width: 170px;
-    height: 170px;
+    width: 130px;
+    height: 200px;
   }
   .productDetail-main {
     display: flex;
@@ -272,29 +272,30 @@ const Container = styled.div`
     justify-content: space-between;
     img {
       padding: 14% 0%;
-      width: 230px;
-      height: 270px;
+      width: 210px;
+      height: 360px;
       border: none;
     }
   }
   .title {
     font-family: Poppins;
     color: gray;
-    font-size: 18px;
+    font-size: 15px;
     padding: 2% 0%;
     width: 100%;
     text-align: center;
   }
   .product-title {
+    padding: 5% 0% 1% 0%;
     text-align: center;
     color: grey;
-    font-size: 30px;
+    font-size: 28px;
     font-family: Kanit;
   }
   .product-description {
-    padding: 7% 5%;
+    padding: 2% 5%;
     width: 100%;
-    font-size: 11px;
+    font-size: 10.5px;
     text-align: justify;
     font-family: Poppins;
   }
@@ -303,7 +304,7 @@ const Container = styled.div`
   .product-ingredient {
     padding: 1% 5%;
     width: 100%;
-    font-size: 12px;
+    font-size: 10.5px;
     text-align: justify;
     font-family: Poppins;
   }

@@ -295,7 +295,7 @@ const Container = styled.div`
     }
   }
   .menu-main {
-    background: rgba(255, 255, 255, 0.18);
+    
     position: absolute;
     top: 0;
     left: 0;

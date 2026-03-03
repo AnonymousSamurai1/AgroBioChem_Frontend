@@ -20,6 +20,7 @@ function DashProducts() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const fileInputRef = useRef(null);
 
@@ -41,7 +42,7 @@ function DashProducts() {
       toast.error("Please fill all the fields");
       return;
     }
-
+    setIsSubmitting(true);
     try {
       const formData = new FormData();
       formData.append("name", name);
@@ -81,6 +82,8 @@ function DashProducts() {
       }
     } catch (error) {
       toast.error("Something went wrong during product creation");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -200,11 +203,16 @@ function DashProducts() {
                       onChange={(e) => setCategory(e.target.value)}
                     >
                       <option value="">Select Category</option>
-                      <option value="Herbicide">Herbicide (Selective)</option>
-                      <option value="Herbicide">Herbicide (Non-Selective)</option>
+                      <option value="Herbicide (Selective)">
+                        Herbicide (Selective)
+                      </option>
+                      <option value="Herbicide (Non-Selective)">
+                        Herbicide (Non-Selective)
+                      </option>
                       <option value="Fungicide">Fungicide</option>
+                      <option value="Fungicide">Insecticide</option>
                       <option value="Fertilizer">Fertilizer</option>
-                      <option value="Others">Others</option>
+                      <option value="Others">Others</option>\
                     </select>
                   </div>
 
@@ -252,11 +260,17 @@ function DashProducts() {
                   </div>
 
                   <div className="main-input">
-                    <input
+                    <button
                       type="submit"
-                      value="Submit"
                       className="input-submit"
-                    />
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <div className="spinner"></div>
+                      ) : (
+                        "Submit"
+                      )}
+                    </button>
                   </div>
                 </form>
               </div>
@@ -540,6 +554,21 @@ const Container = styled.div`
         background: #ffffff03;
       }
   }
+      .spinner {
+        width: 22px;
+        height: 22px;
+        border: 3px solid white;
+        border-top: 3px solid transparent;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin: auto;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
   .productsGrid {
   padding: 7% 5%;
   display: flex;

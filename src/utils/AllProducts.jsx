@@ -165,7 +165,7 @@ function AllProducts(props) {
                       <span>Category:</span> {selectedProduct.category}
                     </p>
                     <p className="product-ingredient">
-                      <span>Active Ingredient:</span> {selectedProduct.ingredient}
+                      <span>Active Ingredient:</span> {selectedProduct.activeIngredient}
                     </p>
                     <p className="product-ingredient">
                       <span>Dosage:</span> {selectedProduct.dosage}
@@ -229,7 +229,7 @@ const Container = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
     outline: none;
-    scrollbar-width: none;
+    scrollbar-width: 1px;
     .paragraph {
       font-family: "Kanit";
       color: gray;
@@ -241,7 +241,7 @@ const Container = styled.div`
   .productCard {
     border-radius: 10px;
     width: 100%;
-    padding: 10%;
+    padding: 5% 10%;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
     :hover {
       cursor: pointer;
@@ -254,8 +254,8 @@ const Container = styled.div`
     }
   }
   .productImg {
-    width: 170px;
-    height: 170px;
+    width: 130px;
+    height: 200px;
   }
   .inputMain {
     position: absolute;
@@ -280,12 +280,12 @@ const Container = styled.div`
   }
   .productDetail-main {
     display: flex;
-    padding: 12% 8%;
+    padding: 5% 8%;
     justify-content: space-between;
     img {
-      padding: 14% 0%;
-      width: 230px;
-      height: 270px;
+      padding: 0%;
+      width: 210px;
+      height: 360px;
       border: none;
     }
   }
@@ -296,20 +296,20 @@ const Container = styled.div`
     font-family: Poppins;
     color: gray;
     font-size: 15px;
-    padding: 2% 0%;
     width: 100%;
     text-align: center;
   }
   .product-title {
+   padding: 12% 0% 1% 0%;
     text-align: center;
     color: grey;
-    font-size: 30px;
+    font-size: 28px;
     font-family: Kanit;
   }
   .product-description {
-    padding: 7% 5%;
+    padding: 2% 5%;
     width: 100%;
-    font-size: 11px;
+    font-size: 10.5px;
     text-align: justify;
     font-family: Poppins;
   }
@@ -318,7 +318,7 @@ const Container = styled.div`
   .product-ingredient {
     padding: 1% 5%;
     width: 100%;
-    font-size: 12px;
+    font-size: 10.5px;
     text-align: justify;
     font-family: Poppins;
   }

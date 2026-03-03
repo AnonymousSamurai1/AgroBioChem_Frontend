@@ -49,7 +49,7 @@ const Container = styled.div`
   .loader {
     position: absolute;
     top: 30%;
-    left: 28%;
+    left: 30%;
   }
   .main_loader {
     margin-bottom: 10%;

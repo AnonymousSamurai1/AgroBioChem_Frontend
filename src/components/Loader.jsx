@@ -48,7 +48,7 @@ const Container = styled.div`
   .loader {
     position: absolute;
     top: 30%;
-    left: 28%;
+    left: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
