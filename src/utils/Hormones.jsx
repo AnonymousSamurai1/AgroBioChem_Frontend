@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Fade } from "react-reveal";
 import styled from "styled-components";
-import Cancel from "../assets/cancel_1.png";
 import Typed from "react-typed";
 
-function AllProducts(props) {
+function Hormones(props) {
   const [detail, setDetail] = useState(false);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -15,7 +14,7 @@ function AllProducts(props) {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/products/",
+        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/products/",
       );
 
       if (!res.ok) {
@@ -26,8 +25,18 @@ function AllProducts(props) {
       console.log("API response:", data);
 
       if (data.success && Array.isArray(data.data)) {
-        setProducts(data.data);
-        setFilteredProducts(data.data);
+        const hormone = data.data.filter(
+          (item) =>
+            item.category &&
+            "plant hormone".includes(item.category.trim().toLowerCase()),
+        );
+
+        setProducts(hormone);
+        setFilteredProducts(hormone);
+
+        if (hormone.length === 0) {
+          toast.info("No Plant hormone products found.");
+        }
       } else {
         setProducts([]);
         setFilteredProducts([]);
@@ -80,7 +89,7 @@ function AllProducts(props) {
       <Fade duration={1000}>
         <div className="search-bar">
           <Typed
-            strings={["All Products"]}
+            strings={["Plant Hormones"]}
             typeSpeed={80}
             backSpeed={80}
             loop
@@ -100,8 +109,9 @@ function AllProducts(props) {
       <div className="productsGrid">
         {Array.isArray(filteredProducts) && filteredProducts.length > 0 ? (
           filteredProducts.map((prod) => (
-            <div className="carder" key={prod._id}>
+            <div className="carder">
               <div
+                key={prod._id}
                 className="productCard"
                 onClick={() => fetchProductDetails(prod._id)}
               >
@@ -116,55 +126,31 @@ function AllProducts(props) {
             </div>
           ))
         ) : (
-          <p className="paragraph">No products found</p>
+          <p className="paragraph">No Plant Hormone product found</p>
         )}
       </div>
-
       {detail && (
         <div className="inputMain">
           <Fade bottom duration={1000}>
             <div className="productMain">
               <img
-                src={Cancel}
+                src={props.remove}
                 alt="Remove"
                 className="cancelProduct"
                 onClick={() => setDetail(false)}
               />
               {selectedProduct ? (
                 <div className="productDetail-main">
-                  <div className="cancelDetail">
-                    <img
-                      src={Cancel}
-                      alt="Remove"
-                      onClick={() => setDetail(false)}
-                    />
-                  </div>
-
                   <div className="imageDetails">
                     {selectedProduct.image && (
                       <img
                         src={`${selectedProduct.image}`}
                         alt={selectedProduct.name}
+                        width="200"
                       />
                     )}
                   </div>
-
                   <div className="detail-description">
-                    <div className="cancel_image">
-                      <img
-                        src={Cancel}
-                        alt="cancel"
-                        onClick={() => setDetail(false)}
-                      />
-                    </div>
-                    <div className="detail-image">
-                      {selectedProduct.image && (
-                        <img
-                          src={`${selectedProduct.image}`}
-                          alt={selectedProduct.name}
-                        />
-                      )}
-                    </div>
                     <h2 className="product-title">{selectedProduct.name}</h2>
                     <p className="product-description">
                       {selectedProduct.description}
@@ -173,8 +159,7 @@ function AllProducts(props) {
                       <span>Category:</span> {selectedProduct.category}
                     </p>
                     <p className="product-ingredient">
-                      <span>Active Ingredient:</span>{" "}
-                      {selectedProduct.activeIngredient}
+                      <span>Active Ingredient:</span> {selectedProduct.activeIngredient}
                     </p>
                     <p className="product-ingredient">
                       <span>Dosage:</span> {selectedProduct.dosage}
@@ -191,12 +176,12 @@ function AllProducts(props) {
           </Fade>
         </div>
       )}
+      ;
     </Container>
   );
 }
 
 const Container = styled.div`
-  display: block;
   .search-bar {
     margin-top: 3%;
     padding: 1% 5%;
@@ -214,7 +199,7 @@ const Container = styled.div`
     text-fill-color: transparent;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
-    padding: 0% 33%;
+    padding: 0% 28%;
   }
   .search {
     width: 680px;
@@ -228,58 +213,6 @@ const Container = styled.div`
     font-family: "Rubik";
     text-indent: 3%;
     color: gray;
-  }
-  .cancelProduct {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  .cancelProduct:hover {
-    transform: scale(1.1);
-  }
-  .cancelDetail {
-    display: none;
-  }
-  .productsGrid {
-    width: 95%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    max-height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    outline: none;
-    scrollbar-width: none;
-    .paragraph {
-      font-family: "Kanit";
-      color: gray;
-    }
-  }
-  .carder {
-    padding: 2% 4%;
-  }
-  .productCard {
-    border-radius: 10px;
-    width: 100%;
-    padding: 5% 10%;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
-    :hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-    p {
-      color: grey;
-      font-size: 12px;
-      font-family: Kanit;
-    }
-  }
-  .productImg {
-    width: 130px;
-    height: 200px;
   }
   .inputMain {
     position: absolute;
@@ -302,38 +235,85 @@ const Container = styled.div`
     flex-direction: column;
     position: relative;
   }
-  .productDetail-main {
+  .cancelProduct {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .cancelProduct:hover {
+    transform: scale(1.1);
+  }
+  .productsGrid {
+    width: 95%;
     display: flex;
-    padding: 5% 8%;
-    justify-content: space-between;
-    img {
-      padding: 0%;
-      width: 210px;
-      height: 360px;
-      border: none;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    outline: none;
+    justify-content: space-around;
+    scrollbar-width: none;
+    .paragraph {
+      font-family: "Kanit";
+      color: gray;
     }
   }
-  .detail-image {
-    display: none;
+  .carder {
+    padding: 2% 4%;
+  }
+  .productCard {
+    border-radius: 10px;
+    width: 100%;
+    padding: 10%;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+    :hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+    p {
+      color: grey;
+      font-size: 12px;
+      font-family: Kanit;
+    }
+  }
+  .productImg {
+    width: 170px;
+    height: 170px;
+  }
+  .productDetail-main {
+    display: flex;
+    padding: 12% 8%;
+    justify-content: space-between;
+    img {
+      padding: 14% 0%;
+      width: 230px;
+      height: 270px;
+      border: none;
+    }
   }
   .title {
     font-family: Poppins;
     color: gray;
     font-size: 15px;
+    padding: 2% 0%;
     width: 100%;
     text-align: center;
   }
   .product-title {
-    padding: 12% 0% 1% 0%;
     text-align: center;
     color: grey;
-    font-size: 28px;
+    font-size: 30px;
     font-family: Kanit;
   }
   .product-description {
-    padding: 2% 5%;
+    padding: 7% 5%;
     width: 100%;
-    font-size: 10.5px;
+    font-size: 11px;
     text-align: justify;
     font-family: Poppins;
   }
@@ -342,132 +322,12 @@ const Container = styled.div`
   .product-ingredient {
     padding: 1% 5%;
     width: 100%;
-    font-size: 10.5px;
+    font-size: 12px;
     text-align: justify;
     font-family: Poppins;
   }
   span {
     color: #008a09ff;
   }
-  .cancel_image {
-    display: none;
-  }
-
-  @media (max-width: 420px) {
-    .search-bar {
-      margin-top: 10%;
-      padding: 1% 3%;
-    }
-    .search {
-      width: 445px;
-    }
-    .productsGrid {
-      max-height: 93vh;
-      justify-content: left;
-      padding: 0% 8%;
-    }
-    .carder {
-      padding: 1% 1%;
-    }
-    .productCard {
-      width: 359px;
-      :hover {
-        cursor: pointer;
-        transform: none;
-      }
-    }
-    .productImg {
-      width: 360px;
-      height: 300px;
-      border-radius: 30px;
-    }
-    .title {
-      font-size: 30px;
-    }
-
-    .imageDetails img {
-      display: none;
-    }
-
-    .detail-image {
-      display: block;
-      width: 200px;
-      height: 200px;
-      padding: 0% 12% 20% 12%;
-      border: none;
-    }
-    .detail-image img {
-      width: 150%;
-      height: 150%;
-      object-fit: contain;
-    }
-    .productDetail-main {
-      display: block;
-      padding: 0% 0%;
-    }
-
-    .inputMain {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 93%;
-      height: 95%;
-      z-index: 5;
-      backdrop-filter: blur(10px);
-      overflow: hidden;
-      padding: 4% 3% 4% 4%;
-      border-radius: 20px;
-    }
-    .productMain {
-      position: relative;
-      background: white;
-      width: 100%;
-      height: 99%;
-      border-radius: 20px;
-      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
-      display: block;
-      padding: 0% 0%;
-    }
-    .detail-description {
-      display: block;
-    }
-    .product-title {
-      text-align: center;
-      color: grey;
-      font-size: 40px;
-      font-family: Kanit;
-    }
-    .product-title {
-      padding: 10% 0% 0% 0%;
-    }
-    .product-description {
-      padding: 4% 5%;
-      width: 90%;
-      font-size: 13px;
-      text-align: justify;
-      font-family: Poppins;
-    }
-    .cancelProduct {
-      top: 1%;
-      right: 1%;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      z-index: 10;
-      display: none;
-    }
-    .cancel_image {
-      display: block;
-      width: 30px;
-      height: 30px;
-      float: right;
-      padding: 1%;
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
 `;
-
-export default AllProducts;
+export default Hormones;

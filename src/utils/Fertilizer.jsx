@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Fade } from "react-reveal";
 import styled from "styled-components";
+import Typed from "react-typed";
 
 function Fertilizer(props) {
   const [detail, setDetail] = useState(false);
@@ -34,7 +35,7 @@ function Fertilizer(props) {
         setFilteredProducts(fertilizer);
 
         if (fertilizer.length === 0) {
-          toast.info("No fungicide or herbicide products found.");
+          toast.info("No Fertilizer products found.");
         }
       } else {
         setProducts([]);
@@ -87,6 +88,13 @@ function Fertilizer(props) {
     <Container>
       <Fade duration={1000}>
         <div className="search-bar">
+          <Typed
+            strings={["Fertilizers"]}
+            typeSpeed={80}
+            backSpeed={80}
+            loop
+            className="typed1"
+          />
           <form>
             <input
               type="text"
@@ -178,6 +186,21 @@ const Container = styled.div`
     margin-top: 3%;
     padding: 1% 5%;
   }
+  .typed1 {
+    font-size: 35px;
+    background: linear-gradient(
+      97.24deg,
+      rgb(63, 212, 50) 44.37%,
+      rgba(160, 207, 167, 0.25) 113.02%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    padding: 0% 33%;
+  }
   .search {
     width: 680px;
     height: 30px;
@@ -191,7 +214,6 @@ const Container = styled.div`
     text-indent: 3%;
     color: gray;
   }
-
   .inputMain {
     position: absolute;
     top: 0;
@@ -230,7 +252,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    max-height: 60vh;
+    max-height: 50vh;
     overflow-y: scroll;
     overflow-x: hidden;
     outline: none;

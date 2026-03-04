@@ -16,7 +16,7 @@ import Package from "../assets/Package.png";
 import Seed from "../assets/Seed.png";
 import ServiceImage from "../assets/Services.png";
 import SupportImage from "../assets/Support.png";
-import CoreImage from "../assets/Core.png"
+import CoreImage from "../assets/Core.png";
 import Mission from "../utils/Mission";
 import Vision from "../utils/Vision";
 import Location from "../utils/Location";
@@ -36,6 +36,7 @@ import Supports from "../utils/Supports";
 import CoreValues from "../utils/CoreValues";
 import Insecticides from "../utils/Insecticides";
 import Fungicides from "../utils/Fungicides";
+import Hormones from "../utils/Hormones";
 
 function Navigation() {
   const [home, setHome] = useState(false);
@@ -50,7 +51,9 @@ function Navigation() {
   const [herbicides, setHerbicides] = useState(false);
   const [insecticides, setInsecticides] = useState(false);
   const [fungicides, setFungicides] = useState(false);
-  const [fertilizer, setFertilizer] = useState(false);
+  const [ferthorm, setFertHorm] = useState(false);
+  const [fertilizers, setFertilizers] = useState(false);
+  const [hormones, setHormones] = useState(false);
   const [location, setLocation] = useState(false);
   const [enquiry, setEnquiry] = useState(false);
   const [mainservices, setMainservices] = useState(false);
@@ -83,18 +86,24 @@ function Navigation() {
   };
   const HandleMissionIn = () => {
     setMission(true);
+    setVision(false);
+    setCoreValues(false);
   };
   const HandleMissionOut = () => {
     setMission(false);
   };
   const HandleVisionIn = () => {
     setVision(true);
+    setMission(false);
+    setCoreValues(false);
   };
   const HandleVisionOut = () => {
     setVision(false);
   };
   const HandleCoreValuesIn = () => {
     setCoreValues(true);
+    setMission(false);
+    setVision(false);
   };
   const HandleCoreValuesOut = () => {
     setCoreValues(false);
@@ -102,58 +111,106 @@ function Navigation() {
   const HandleAllProductsIn = () => {
     setAllproducts(true);
     setCropProtection(false);
+    setHerbicides(false);
+    setInsecticides(false);
+    setFungicides(false);
+    setFertHorm(false);
+    setFertilizers(false);
+    setHormones(false);
   };
   const HandleAllProductsOut = () => {
     setAllproducts(false);
   };
   const HandlCropProtection = () => {
     setCropProtection((prev) => !prev);
+    setFertHorm(false);
   };
   const HandleHerbicidesIn = () => {
     setHerbicides(true);
+    setInsecticides(false);
+    setFungicides(false);
+    setAllproducts(false);
+    setFertHorm(false);
+    setFertilizers(false);
+    setHormones(false);
   };
   const HandleHerbicidesOut = () => {
     setHerbicides(false);
   };
   const HandleInsecticidesIn = () => {
     setInsecticides(true);
+    setHerbicides(false);
+    setFungicides(false);
+    setAllproducts(false);
+    setFertHorm(false);
+    setFertilizers(false);
+    setHormones(false);
   };
   const HandleInsecticidesOut = () => {
     setInsecticides(false);
   };
   const HandleFungicidesIn = () => {
     setFungicides(true);
+    setHerbicides(false);
+    setAllproducts(false);
+    setInsecticides(false);
+    setFertHorm(false);
+    setFertilizers(false);
+    setHormones(false);
   };
   const HandleFungicidesOut = () => {
     setFungicides(false);
   };
-  const HandleFertilizerIn = () => {
-    setFertilizer(true);
+  const HandleFertHorm = () => {
+    setFertHorm((prev) => !prev);
     setCropProtection(false);
   };
-  const HandleFertilizerOut = () => {
-    setFertilizer(false);
+  const HandleFertilizersIn = () => {
+    setFertilizers(true);
+    setInsecticides(true);
+    setHerbicides(false);
+    setFungicides(false);
+    setAllproducts(false);
+    setHormones(false);
+  };
+  const HandleFertilizersOut = () => {
+    setFertilizers(false);
+  };
+  const HandleHormonesIn = () => {
+    setHormones(true);
+    setFungicides(false);
+    setHerbicides(false);
+    setAllproducts(false);
+    setInsecticides(false);
+    setFertilizers(false);
+  };
+  const HandleHormonesOut = () => {
+    setHormones(false);
   };
   const HandleLocationIn = () => {
     setLocation(true);
+    setEnquiry(false);
   };
   const HandleLocationOut = () => {
     setLocation(false);
   };
   const HandleEnquiryIn = () => {
     setEnquiry(true);
+    setLocation(false);
   };
   const HandleEnquiryOut = () => {
     setEnquiry(false);
   };
   const HandleMainServiceIn = () => {
     setMainservices(true);
+    setSupport(false);
   };
   const HandleMainServiceOut = () => {
     setMainservices(false);
   };
   const HandleSupportIn = () => {
     setSupport(true);
+    setMainservices(false);
   };
   const HandleSupportOut = () => {
     setSupport(false);
@@ -162,6 +219,7 @@ function Navigation() {
   return (
     <Container>
       <div className="containers">
+        {/* {Company Profile} */}
         <Fade top duration={1000}>
           <div className="m_nav" onClick={HandleHomeIn}>
             <NavUtils image={Home} title="Company" />
@@ -175,57 +233,12 @@ function Navigation() {
                 <div className="cat_align" onClick={HandleMissionIn}>
                   <Categories img={Mission1} title={"Mission"} />
                 </div>
-                {mission && (
-                  <div className="alignment">
-                    <Fade bottom duration={1000}>
-                      <div className="alignment_sub">
-                        <img
-                          src={Cancel}
-                          alt="Cancel"
-                          className="cancel"
-                          onClick={HandleMissionOut}
-                        />
-                        <Mission mis={MissionImage} />
-                      </div>
-                    </Fade>
-                  </div>
-                )}
                 <div className="cat_align" onClick={HandleVisionIn}>
                   <Categories img={Vision1} title={"Vision"} />
                 </div>
-                {vision && (
-                  <div className="alignment">
-                    <Fade bottom duration={1000}>
-                      <div className="alignment_sub">
-                        <img
-                          src={Cancel}
-                          alt="Cancel"
-                          className="cancel"
-                          onClick={HandleVisionOut}
-                        />
-                        <Vision mis={VisionImage} />
-                      </div>
-                    </Fade>
-                  </div>
-                )}
                 <div className="cat_align" onClick={HandleCoreValuesIn}>
                   <Categories img={CoreImage} title={"Core Values"} />
                 </div>
-                {corevalues && (
-                  <div className="alignment">
-                    <Fade bottom duration={1000}>
-                      <div className="alignment_sub">
-                        <img
-                          src={Cancel}
-                          alt="Cancel"
-                          className="cancel"
-                          onClick={HandleCoreValuesOut}
-                        />
-                        <CoreValues />
-                      </div>
-                    </Fade>
-                  </div>
-                )}
               </div>
               <div className="blank" onClick={HandleHomeOut}></div>
             </div>
@@ -248,46 +261,19 @@ function Navigation() {
                   <div className="cat_right_sub" onClick={HandleMainServiceIn}>
                     <Categories img={ServiceImage} title={"Services"} />
                   </div>
-                  {mainservices && (
-                    <div className="alignment">
-                      <Fade bottom duration={1000}>
-                        <div className="alignment_sub">
-                          <img
-                            src={Cancel}
-                            alt="Cancel"
-                            className="cancel"
-                            onClick={HandleMainServiceOut}
-                          />
-                          <Services />
-                        </div>
-                      </Fade>
-                    </div>
-                  )}
                   <div className="cat_right_sub" onClick={HandleSupportIn}>
-                    <Categories img={SupportImage} title={"Support/Resources"} />
+                    <Categories
+                      img={SupportImage}
+                      title={"Support/Resources"}
+                    />
                   </div>
-                  {support && (
-                    <div className="alignment">
-                      <Fade bottom duration={1000}>
-                        <div className="alignment_sub">
-                          <img
-                            src={Cancel}
-                            alt="Cancel"
-                            className="cancel"
-                            onClick={HandleSupportOut}
-                          />
-                          <Supports />
-                        </div>
-                      </Fade>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
           </Fade>
         )}
 
-        {/* {Product} */}
+        {/* {Products} */}
         <Fade left duration={1000}>
           <div className="m_nav" onClick={HandleProductIn}>
             <NavUtils image={Products} title="Products" />
@@ -301,22 +287,6 @@ function Navigation() {
                 <div className="cat_align" onClick={HandleAllProductsIn}>
                   <Categories img={Package} title={"All"} />
                 </div>
-                {allproducts && (
-                  <div className="alignment">
-                    <Fade bottom duration={1000}>
-                      <div className="alignment_sub">
-                        <img
-                          src={Cancel}
-                          alt="Cancel"
-                          className="cancel"
-                          onClick={HandleAllProductsOut}
-                        />
-                        <br />
-                        <AllProducts />
-                      </div>
-                    </Fade>
-                  </div>
-                )}
                 <div className="cat_align_a" onClick={HandlCropProtection}>
                   <Categories
                     img={Chemical}
@@ -336,28 +306,24 @@ function Navigation() {
                     </div>
                   </Fade>
                 )}
-                <div className="cat_align" onClick={HandleFertilizerIn}>
+                <div className="cat_align" onClick={HandleFertHorm}>
                   <Categories
                     img={Fertilizer1}
                     title={"Fertilizer and Plant Nutrients"}
                   />
                 </div>
-                {fertilizer && (
-                  <div className="alignment">
-                    <Fade bottom duration={1000}>
-                      <div className="alignment_sub">
-                        <img
-                          src={Cancel}
-                          alt="Cancel"
-                          className="cancel"
-                          onClick={HandleFertilizerOut}
-                        />
-                        <br />
-                        <Fertilizer remove={Cancel} />
-                      </div>
-                    </Fade>
-                  </div>
+                {ferthorm && (
+                  <Fade top duration={1000}>
+                    <div className="list_down">
+                      <ul>
+                        <li onClick={HandleFertilizersIn}>Fertilizer</li>
+
+                        <li onClick={HandleHormonesIn}>Plant Hormone</li>
+                      </ul>
+                    </div>
+                  </Fade>
                 )}
+
                 <div className="cat_align">
                   <Categories img={Seed} title={"Seeds and Seed Treatments"} />
                 </div>
@@ -383,48 +349,121 @@ function Navigation() {
                   <div className="cat_right_sub" onClick={HandleLocationIn}>
                     <Categories img={LocationLogo} title={"Location"} />
                   </div>
-                  {location && (
-                    <div className="alignment">
-                      <Fade bottom duration={1000}>
-                        <div className="alignment_sub">
-                          <img
-                            src={Cancel}
-                            alt="Cancel"
-                            className="cancel"
-                            onClick={HandleLocationOut}
-                          />
-                          <Location map={LocationImage} />
-                        </div>
-                      </Fade>
-                    </div>
-                  )}
                   <div className="cat_right_sub" onClick={HandleEnquiryIn}>
                     <Categories img={EnquireLogo} title={"Enquiry"} />
                   </div>
-                  {enquiry && (
-                    <div className="alignment">
-                      <Fade bottom duration={1000}>
-                        <div className="alignment_sub">
-                          <img
-                            src={Cancel}
-                            alt="Cancel"
-                            className="cancel"
-                            onClick={HandleEnquiryOut}
-                          />
-                          <Enquiry farmer={FarmerImage} />
-                        </div>
-                      </Fade>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
           </Fade>
         )}
       </div>
+
+      {/* {Company Profile} */}
+      {mission && (
+        <div className="alignment">
+          <Fade>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleMissionOut}
+              />
+              <Mission mis={MissionImage} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {vision && (
+        <div className="alignment">
+          <Fade>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleVisionOut}
+              />
+              <Vision mis={VisionImage} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {corevalues && (
+        <div className="alignment">
+          <Fade>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleCoreValuesOut}
+              />
+              <CoreValues />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {/* {Services} */}
+
+      {mainservices && (
+        <div className="alignmentA">
+          <Fade>
+            <div className="alignment_subA">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleMainServiceOut}
+              />
+              <Services />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {support && (
+        <div className="alignmentA">
+          <Fade>
+            <div className="alignment_subA">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleSupportOut}
+              />
+              <Supports />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {/* {Products} */}
+
+      {allproducts && (
+        <div className="alignment">
+          <Fade>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleAllProductsOut}
+              />
+              <br />
+              <AllProducts />
+            </div>
+          </Fade>
+        </div>
+      )}
+
       {herbicides && (
         <div className="alignment">
-          <Fade bottom duration={1000}>
+          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -441,7 +480,7 @@ function Navigation() {
 
       {insecticides && (
         <div className="alignment">
-          <Fade bottom duration={1000}>
+          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -458,7 +497,7 @@ function Navigation() {
 
       {fungicides && (
         <div className="alignment">
-          <Fade bottom duration={1000}>
+          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -468,6 +507,75 @@ function Navigation() {
               />
               <br />
               <Fungicides remove={Cancel} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {fertilizers && (
+        <div className="alignment">
+          <Fade>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleFertilizersOut}
+              />
+              <br />
+              <Fertilizer remove={Cancel} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {hormones && (
+        <div className="alignment">
+          <Fade>
+            <div className="alignment_sub">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleHormonesOut}
+              />
+              <br />
+              <Hormones remove={Cancel} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+
+      {/* {Contact} */}
+
+      {location && (
+        <div className="alignmentA">
+          <Fade>
+            <div className="alignment_subA">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleLocationOut}
+              />
+              <Location map={LocationImage} />
+            </div>
+          </Fade>
+        </div>
+      )}
+
+      {enquiry && (
+        <div className="alignmentA">
+          <Fade>
+            <div className="alignment_subA">
+              <img
+                src={Cancel}
+                alt="Cancel"
+                className="cancel"
+                onClick={HandleEnquiryOut}
+              />
+              <Enquiry farmer={FarmerImage} />
             </div>
           </Fade>
         </div>
@@ -593,19 +701,36 @@ const Container = styled.div`
   .alignment {
     position: fixed;
     inset: 0;
+    left: 20%;
+    z-index: 3;
     width: 100vw;
     height: 100vh;
-    background: rgba(68, 70, 65, 0.85);
-    backdrop-filter: blur(20px);
-    z-index: 9999;
     display: flex;
-    justify-content: center;
+    padding: 0% 10%;
+    align-items: center;
+  }
+  .alignmentA {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    padding: 0% 10%;
     align-items: center;
   }
   .alignment_sub {
     background: white;
     display: block;
     width: 60%;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+  }
+  .alignment_subA {
+    background: white;
+    display: block;
+    width: 100%;
     height: 80%;
     border-radius: 20px;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);

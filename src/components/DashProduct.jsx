@@ -209,9 +209,10 @@ function DashProducts() {
                       <option value="Herbicide (Non-Selective)">
                         Herbicide (Non-Selective)
                       </option>
-                      <option value="Fungicide">Fungicide</option>
+                      <option value="fungicide">Fungicide</option>
                       <option value="insecticide">Insecticide</option>
-                      <option value="Fertilizer">Fertilizer</option>
+                      <option value="fertilizer">Fertilizer</option>
+                      <option value="plant hormone">Plant Hormone</option>
                       <option value="Others">Others</option>\
                     </select>
                   </div>

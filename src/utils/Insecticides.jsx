@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Fade } from "react-reveal";
 import styled from "styled-components";
+import Typed from "react-typed";
 
 function Insecticides(props) {
   const [detail, setDetail] = useState(false);
@@ -87,6 +88,13 @@ function Insecticides(props) {
     <Container>
       <Fade duration={1000}>
         <div className="search-bar">
+          <Typed
+            strings={["Insecticides"]}
+            typeSpeed={80}
+            backSpeed={80}
+            loop
+            className="typed1"
+          />
           <form>
             <input
               type="text"
@@ -118,7 +126,7 @@ function Insecticides(props) {
             </div>
           ))
         ) : (
-          <p className="paragraph">No Crop Protection chemical found</p>
+          <p className="paragraph">No Insecticide found</p>
         )}
       </div>
       {detail && (
@@ -179,6 +187,21 @@ const Container = styled.div`
     margin-top: 3%;
     padding: 1% 5%;
   }
+  .typed1 {
+    font-size: 35px;
+    background: linear-gradient(
+      97.24deg,
+      rgb(63, 212, 50) 44.37%,
+      rgba(160, 207, 167, 0.25) 113.02%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+    padding: 0% 33%;
+  }
   .search {
     width: 680px;
     height: 30px;
@@ -231,7 +254,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    max-height: 60vh;
+    max-height: 50vh;
     overflow-y: scroll;
     overflow-x: hidden;
     outline: none;
