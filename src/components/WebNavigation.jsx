@@ -167,7 +167,7 @@ function Navigation() {
   };
   const HandleFertilizersIn = () => {
     setFertilizers(true);
-    setInsecticides(true);
+    setInsecticides(false);
     setHerbicides(false);
     setFungicides(false);
     setAllproducts(false);
