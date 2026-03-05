@@ -367,12 +367,17 @@ const Container = styled.div`
       padding: 10% 25%;
     }
     .mission {
+      img {
+        padding: 0% 0%;
+        width: 350px;
+        height: 250px;
+      }
       padding: 10% 0%;
       .mission-details {
         width: 107%;
         padding: 10% 0%;
         font-family: "Kanit";
-        text-align: justify;
+        text-align: LEFT;
         font-size: 20px;
         font-weight: bold;
       }
@@ -396,12 +401,12 @@ const Container = styled.div`
     .vision {
       padding: 10% 0%;
       img {
-        padding: 0% 10%;
+        padding: 0% 5%;
       }
       .vision-details {
         padding: 10% 0%;
         font-family: "Kanit";
-        text-align: justify;
+        text-align: left;
         font-size: 20px;
         font-weight: bold;
         color: white;

@@ -179,7 +179,7 @@ const Container = styled.div`
     height: 250px;
     padding: 6% 2%;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 420px) {
     .main-location {
       display: block;
     }
@@ -203,18 +203,18 @@ const Container = styled.div`
       padding: 2% 3.5%;
     }
     .input-box {
-      width: 400px;
+      width: 360px;
       height: 60px;
     }
     textarea {
-      width: 400px;
+      width: 360px;
       height: 60px;
     }
     .farmer {
       display: none;
     }
     .submit {
-      width: 420px;
+      width: 380px;
     }
     .submit: hover {
     cursor: none;
