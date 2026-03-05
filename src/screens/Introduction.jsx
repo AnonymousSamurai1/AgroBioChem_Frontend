@@ -184,7 +184,7 @@ function Introduction() {
               className="testimony-main"
             />
             <div className="testimony-details">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing</p>
+              <p>Discover the experiences of farmers who have improved their harvests using our products.</p>
             </div>
             <div className="details-sub">
               <Slide
@@ -377,9 +377,8 @@ const Container = styled.div`
         width: 107%;
         padding: 10% 0%;
         font-family: "Kanit";
-        text-align: LEFT;
+        text-align: left;
         font-size: 20px;
-        font-weight: bold;
       }
     }
     .vision-background {
@@ -408,52 +407,63 @@ const Container = styled.div`
         font-family: "Kanit";
         text-align: left;
         font-size: 20px;
-        font-weight: bold;
         color: white;
       }
     }
     .testimony {
-      padding: 10% 15%;
+      padding: 10% 7% 10% 15%;
     }
     .details-sub {
       border-radius: 20px;
-      padding: 6% 10%;
+      padding: 6% 0%;
     }
     .slide {
       border: none;
+      text-align: center;
       img {
-        width: 250px;
+        width: 40%;
         height: 200px;
       }
       .main-slide {
-        padding: 3%;
+        padding: 0%;
+        width: 70%;
         border: none;
+        
+      }
+      .slider{
+        width: 350px;
+        height: 270px;
       }
       h2 {
         text-align: center;
-        padding: 3% 0%;
+        padding: 3% 12%;
         color: gray;
         width: 240px;
         font-size: 14px;
         font-family: "Poppins", sans-serif;
       }
       p {
+        width: 240px;
+        padding: 3% 10%;
         color: grey;
-        text-align: center;
         font-family: Kanit;
       }
     }
     .testimony-main {
-      font-size: 45px;
+      font-size: 40px;
       background: linear-gradient(rgb(63, 212, 50) 44.37%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bolder;
       font-family: "Poppins", sans-serif;
-      padding: 10% 13%;
+      padding: 10% 8%;
     }
     .testimony-details {
-      padding: 2% 0% 10% 0%;
+      padding: 2% 0% 5% 0%;
+      p{
+        color: grey;
+        font-family: Kanit;
+      }
     }
     .toggle-background {
       background: rgba(41, 41, 41, 0.43);

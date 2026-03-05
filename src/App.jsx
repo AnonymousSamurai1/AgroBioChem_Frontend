@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Home from "./pages/Home";
+import Home from "./screens/Introduction";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Loader from "./assets/Logo.svg";

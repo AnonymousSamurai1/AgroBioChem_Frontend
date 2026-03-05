@@ -187,13 +187,16 @@ const Container = styled.div`
       font-size: 50px;
     }
     .span {
-      font-size: 50px;
+      font-size: 43px;
     }
     .title {
       width: 100%;
     }
+    .typed {
+      font-size: 43px;
+    }
     .title h1 {
-      font-size: 45px;
+      font-size: 43px;
     }
     .title p {
       padding-top: 10%;

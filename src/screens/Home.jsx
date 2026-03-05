@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Introduction from "../screens/Introduction";
+import Introduction from "./Introduction";
 
 function Home() {
   return (

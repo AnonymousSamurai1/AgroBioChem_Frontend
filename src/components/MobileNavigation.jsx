@@ -105,7 +105,7 @@ function MobileNavigation() {
 }
 
 const Container = styled.div`
-  @media (max-width: 480px) {
+  @media (max-width: 420px) {
   .nav {
       width: 100%;
       height: 100%;
@@ -122,8 +122,8 @@ const Container = styled.div`
     }
     img {
       padding: 15% 0%;
-        width: 80px;
-        height: 80px;
+        width: 50px;
+        height: 50px;
     }
     ul li {
       padding: 25% 10%;
@@ -131,7 +131,7 @@ const Container = styled.div`
       list-style-type: none;
       text-decoration: none;
       font-family: "Poppins";
-      font-size: 25px;
+      font-size: 18px;
       font-weight: bolder;
     }
     .products{

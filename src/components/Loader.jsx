@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { BarLoader } from "react-spinners";
 import Fade from "react-reveal";
 import LoaderImage from "../assets/Logo.svg";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../screens/Dashboard";
 
 function Loader() {
   const [loading, setLoading] = useState(true);

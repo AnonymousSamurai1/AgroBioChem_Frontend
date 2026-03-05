@@ -78,7 +78,7 @@ const Corelist = [
         display: flex;
         flex-wrap: wrap;
         padding: 2% 6%;
-        width: 100%;
+        width: 99%;
       }
       .core-main {
         position: relative;
