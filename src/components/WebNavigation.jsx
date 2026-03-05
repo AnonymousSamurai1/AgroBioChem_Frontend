@@ -362,7 +362,6 @@ function Navigation() {
       {/* {Company Profile} */}
       {mission && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -372,13 +371,11 @@ function Navigation() {
               />
               <Mission mis={MissionImage} />
             </div>
-          </Fade>
         </div>
       )}
 
       {vision && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -388,13 +385,11 @@ function Navigation() {
               />
               <Vision mis={VisionImage} />
             </div>
-          </Fade>
         </div>
       )}
 
       {corevalues && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -404,7 +399,6 @@ function Navigation() {
               />
               <CoreValues />
             </div>
-          </Fade>
         </div>
       )}
 
@@ -412,7 +406,6 @@ function Navigation() {
 
       {mainservices && (
         <div className="alignmentA">
-          <Fade>
             <div className="alignment_subA">
               <img
                 src={Cancel}
@@ -422,13 +415,11 @@ function Navigation() {
               />
               <Services />
             </div>
-          </Fade>
         </div>
       )}
 
       {support && (
         <div className="alignmentA">
-          <Fade>
             <div className="alignment_subA">
               <img
                 src={Cancel}
@@ -438,7 +429,6 @@ function Navigation() {
               />
               <Supports />
             </div>
-          </Fade>
         </div>
       )}
 
@@ -446,7 +436,6 @@ function Navigation() {
 
       {allproducts && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -457,13 +446,11 @@ function Navigation() {
               <br />
               <AllProducts />
             </div>
-          </Fade>
         </div>
       )}
 
       {herbicides && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -474,13 +461,11 @@ function Navigation() {
               <br />
               <Herbicides remove={Cancel} />
             </div>
-          </Fade>
         </div>
       )}
 
       {insecticides && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -491,13 +476,11 @@ function Navigation() {
               <br />
               <Insecticides remove={Cancel} />
             </div>
-          </Fade>
         </div>
       )}
 
       {fungicides && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -508,13 +491,11 @@ function Navigation() {
               <br />
               <Fungicides remove={Cancel} />
             </div>
-          </Fade>
         </div>
       )}
 
       {fertilizers && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -525,13 +506,11 @@ function Navigation() {
               <br />
               <Fertilizer remove={Cancel} />
             </div>
-          </Fade>
         </div>
       )}
 
       {hormones && (
         <div className="alignment">
-          <Fade>
             <div className="alignment_sub">
               <img
                 src={Cancel}
@@ -542,7 +521,6 @@ function Navigation() {
               <br />
               <Hormones remove={Cancel} />
             </div>
-          </Fade>
         </div>
       )}
 
@@ -551,7 +529,6 @@ function Navigation() {
 
       {location && (
         <div className="alignmentA">
-          <Fade>
             <div className="alignment_subA">
               <img
                 src={Cancel}
@@ -561,13 +538,11 @@ function Navigation() {
               />
               <Location map={LocationImage} />
             </div>
-          </Fade>
         </div>
       )}
 
       {enquiry && (
         <div className="alignmentA">
-          <Fade>
             <div className="alignment_subA">
               <img
                 src={Cancel}
@@ -577,7 +552,6 @@ function Navigation() {
               />
               <Enquiry farmer={FarmerImage} />
             </div>
-          </Fade>
         </div>
       )}
     </Container>

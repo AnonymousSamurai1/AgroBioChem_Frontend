@@ -202,7 +202,7 @@ const Container = styled.div`
     padding: 1% 5%;
   }
   .typed1 {
-    font-size: 35px;
+    font-size: 30px;
     background: linear-gradient(
       97.24deg,
       rgb(63, 212, 50) 44.37%,
@@ -286,16 +286,16 @@ const Container = styled.div`
     top: 0;
     width: 80%;
     height: 97%;
-    z-index: 5;
-    backdrop-filter: blur(10px);
+    z-index: 1;
+    backdrop-filter: blur(5px);
     overflow: hidden;
-    padding: 1% 10%;
+    padding: 5% 2%;
     border-radius: 20px;
   }
   .productMain {
     background: white;
-    width: 100%;
-    height: 100%;
+    width: 57%;
+    height: 75%;
     border-radius: 20px;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
     display: flex;

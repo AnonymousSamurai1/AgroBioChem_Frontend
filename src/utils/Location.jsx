@@ -46,7 +46,7 @@ const Container = styled.div`
     top: 2;
     z-index: 2;
     width: 10%;
-    padding: 3% 20% 0% 60%;
+    padding: 3% 20% 0% 43%;
   }
   .location {
     background: #0aa815ff;

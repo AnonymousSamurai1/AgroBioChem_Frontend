@@ -187,7 +187,7 @@ const Container = styled.div`
     padding: 1% 5%;
   }
   .typed1 {
-    font-size: 35px;
+    font-size: 30px;
     background: linear-gradient(
       97.24deg,
       rgb(63, 212, 50) 44.37%,
@@ -229,6 +229,27 @@ const Container = styled.div`
     background: white;
     width: 100%;
     height: 100%;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .inputMain {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 97%;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    padding: 5% 2%;
+    border-radius: 20px;
+  }
+  .productMain {
+    background: white;
+    width: 57%;
+    height: 75%;
     border-radius: 20px;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -285,14 +306,14 @@ const Container = styled.div`
     width: 170px;
     height: 170px;
   }
-  .productDetail-main {
+   .productDetail-main {
     display: flex;
-    padding: 12% 8%;
+    padding: 8% 8%;
     justify-content: space-between;
     img {
-      padding: 14% 0%;
-      width: 230px;
-      height: 270px;
+      padding: 0%;
+      width: 210px;
+      height: 360px;
       border: none;
     }
   }
