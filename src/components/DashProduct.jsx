@@ -935,7 +935,7 @@ const Container = styled.div`
       padding: 7% 5%;
       display: flex;
       flex-wrap: wrap;
-      width: 137vh;
+      width: 143vh;
       height: 137vh
       background: red;
       justify-content: space-evenly; 
@@ -955,10 +955,10 @@ const Container = styled.div`
       .productCard{
       border-radius: 10px;
       box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
-      padding: 2%;
+      padding: 3%;
       :hover{
         cursor: pointer;
-        transform: scale(1.1);
+        transform: scale(1.03);
       }
         img{
           width: 170px;

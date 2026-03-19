@@ -283,6 +283,7 @@ const Container = styled.div`
       :hover{
         cursor: pointer;
         transform: scale(1.1);
+        color: blue;
       }
     }
     span{

@@ -190,7 +190,7 @@ const Container = styled.div`
     font-size: 30px;
     background: linear-gradient(
       97.24deg,
-      rgb(63, 212, 50) 44.37%,
+      rgb(149, 7, 52) 44.37%,
       rgba(160, 207, 167, 0.25) 113.02%
     );
     -webkit-background-clip: text;
@@ -199,7 +199,7 @@ const Container = styled.div`
     text-fill-color: transparent;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
-    padding: 0% 28%;
+    padding: 0% 30%;
   }
   .search {
     width: 680px;

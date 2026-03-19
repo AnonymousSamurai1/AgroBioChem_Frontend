@@ -284,8 +284,8 @@ const Container = styled.div`
     }
   }
   .productImg {
-    width: 130px;
-    height: 200px;
+    width: 170px;
+    height: 270px;
   }
   .productDetail-main {
     display: flex;

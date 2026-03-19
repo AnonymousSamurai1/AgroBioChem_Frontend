@@ -200,7 +200,7 @@ const Container = styled.div`
     text-fill-color: transparent;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
-    padding: 0% 33%;
+    padding: 0% 37%;
   }
   .search {
     width: 680px;
@@ -284,8 +284,8 @@ const Container = styled.div`
     }
   }
   .productImg {
-    width: 130px;
-    height: 200px;
+    width: 170px;
+    height: 270px;
   }
    .productDetail-main {
     display: flex;

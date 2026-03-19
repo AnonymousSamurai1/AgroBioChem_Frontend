@@ -190,7 +190,7 @@ const Container = styled.div`
     font-size: 30px;
     background: linear-gradient(
       97.24deg,
-      rgb(63, 212, 50) 44.37%,
+      rgb(88, 88, 88) 44.37%,
       rgba(160, 207, 167, 0.25) 113.02%
     );
     -webkit-background-clip: text;
@@ -199,7 +199,7 @@ const Container = styled.div`
     text-fill-color: transparent;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
-    padding: 0% 33%;
+    padding: 0% 37%;
   }
   .search {
     width: 680px;
@@ -304,15 +304,15 @@ const Container = styled.div`
   }
   .productImg {
     width: 170px;
-    height: 170px;
+    height: 200px;
   }
    .productDetail-main {
     display: flex;
-    padding: 8% 8%;
+    padding: 8% 9%;
     justify-content: space-between;
     img {
       padding: 0%;
-      width: 210px;
+      width: 260px;
       height: 360px;
       border: none;
     }
