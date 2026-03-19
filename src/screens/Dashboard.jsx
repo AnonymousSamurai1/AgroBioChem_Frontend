@@ -7,7 +7,6 @@ import DashService from '../components/DashService';
 import Home from '../assets/Home.png';
 import Question from '../assets/Question.png';
 import Product from '../assets/Product.png';
-import Service from '../assets/Service.png';
 import Logout from '../assets/Logout.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -60,7 +59,7 @@ function Dashboard() {
 
             <li onClick={() => navigate('question')}>
               <div className="icons">
-                <img src={Question} alt="home" />
+                <img src={Question} alt="questions" />
               </div>
               <div className="list">
                 <p>Question</p>
@@ -69,24 +68,17 @@ function Dashboard() {
 
             <li onClick={() => navigate('product')}>
               <div className="icons">
-                <img src={Product} alt="home" />
+                <img src={Product} alt="products" />
               </div>
               <div className="list">
                 <p>Product</p>
               </div>
             </li>
-            <li onClick={() => navigate('service')}>
-              <div className="icons">
-                <img src={Service} alt="home" />
-              </div>
-              <div className="list">
-                <p>Service</p>
-              </div>
-            </li>
+
             <div className="logout">
               <li onClick={handleLogout}>
                 <div className="icons">
-                  <img src={Logout} alt="home" />
+                  <img src={Logout} alt="logout" />
                 </div>
                 <div className="list">
                   <p>Logout</p>

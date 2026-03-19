@@ -229,7 +229,7 @@ function Navigation() {
           <Fade left duration={1000}>
             <div className="home align-left">
               <div className="home-sub-a">
-                <h3>Company</h3>
+                <h3>About</h3>
                 <div className="cat_align" onClick={HandleMissionIn}>
                   <Categories img={Mission1} title={"Mission"} />
                 </div>
