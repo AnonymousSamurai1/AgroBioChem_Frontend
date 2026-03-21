@@ -309,7 +309,7 @@ function Navigation() {
                 <div className="cat_align" onClick={HandleFertHorm}>
                   <Categories
                     img={Fertilizer1}
-                    title={"Fertilizer and Plant Nutrients"}
+                    title={"Fertilizer and Plant Hormones"}
                   />
                 </div>
                 {ferthorm && (
@@ -362,43 +362,43 @@ function Navigation() {
       {/* {Company Profile} */}
       {mission && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleMissionOut}
-              />
-              <Mission mis={MissionImage} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleMissionOut}
+            />
+            <Mission mis={MissionImage} />
+          </div>
         </div>
       )}
 
       {vision && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleVisionOut}
-              />
-              <Vision mis={VisionImage} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleVisionOut}
+            />
+            <Vision mis={VisionImage} />
+          </div>
         </div>
       )}
 
       {corevalues && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleCoreValuesOut}
-              />
-              <CoreValues />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleCoreValuesOut}
+            />
+            <CoreValues />
+          </div>
         </div>
       )}
 
@@ -406,29 +406,29 @@ function Navigation() {
 
       {mainservices && (
         <div className="alignmentA">
-            <div className="alignment_subA">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleMainServiceOut}
-              />
-              <Services />
-            </div>
+          <div className="alignment_subA">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleMainServiceOut}
+            />
+            <Services />
+          </div>
         </div>
       )}
 
       {support && (
         <div className="alignmentA">
-            <div className="alignment_subA">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleSupportOut}
-              />
-              <Supports />
-            </div>
+          <div className="alignment_subA">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleSupportOut}
+            />
+            <Supports />
+          </div>
         </div>
       )}
 
@@ -436,122 +436,121 @@ function Navigation() {
 
       {allproducts && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleAllProductsOut}
-              />
-              <br />
-              <AllProducts />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleAllProductsOut}
+            />
+            <br />
+            <AllProducts />
+          </div>
         </div>
       )}
 
       {herbicides && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleHerbicidesOut}
-              />
-              <br />
-              <Herbicides remove={Cancel} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleHerbicidesOut}
+            />
+            <br />
+            <Herbicides remove={Cancel} />
+          </div>
         </div>
       )}
 
       {insecticides && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleInsecticidesOut}
-              />
-              <br />
-              <Insecticides remove={Cancel} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleInsecticidesOut}
+            />
+            <br />
+            <Insecticides remove={Cancel} />
+          </div>
         </div>
       )}
 
       {fungicides && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleFungicidesOut}
-              />
-              <br />
-              <Fungicides remove={Cancel} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleFungicidesOut}
+            />
+            <br />
+            <Fungicides remove={Cancel} />
+          </div>
         </div>
       )}
 
       {fertilizers && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleFertilizersOut}
-              />
-              <br />
-              <Fertilizer remove={Cancel} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleFertilizersOut}
+            />
+            <br />
+            <Fertilizer remove={Cancel} />
+          </div>
         </div>
       )}
 
       {hormones && (
         <div className="alignment">
-            <div className="alignment_sub">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleHormonesOut}
-              />
-              <br />
-              <Hormones remove={Cancel} />
-            </div>
+          <div className="alignment_sub">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleHormonesOut}
+            />
+            <br />
+            <Hormones remove={Cancel} />
+          </div>
         </div>
       )}
-
 
       {/* {Contact} */}
 
       {location && (
         <div className="alignmentA">
-            <div className="alignment_subA">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleLocationOut}
-              />
-              <Location map={LocationImage} />
-            </div>
+          <div className="alignment_subA">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleLocationOut}
+            />
+            <Location map={LocationImage} />
+          </div>
         </div>
       )}
 
       {enquiry && (
         <div className="alignmentA">
-            <div className="alignment_subA">
-              <img
-                src={Cancel}
-                alt="Cancel"
-                className="cancel"
-                onClick={HandleEnquiryOut}
-              />
-              <Enquiry farmer={FarmerImage} />
-            </div>
+          <div className="alignment_subA">
+            <img
+              src={Cancel}
+              alt="Cancel"
+              className="cancel"
+              onClick={HandleEnquiryOut}
+            />
+            <Enquiry farmer={FarmerImage} />
+          </div>
         </div>
       )}
     </Container>
