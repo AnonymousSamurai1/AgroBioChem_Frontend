@@ -129,6 +129,7 @@ function DashProducts() {
       } else {
         toast.error(data.message || "Product creation failed");
       }
+      fetchProducts();
     } catch (error) {
       toast.error("Something went wrong during product creation");
     } finally {
@@ -670,7 +671,6 @@ function DashProducts() {
           </Fade>
         </div>
       )}
-
       {showDeleteModal && (
         <div className="deleteOverlay">
           <Fade bottom duration={500}>
