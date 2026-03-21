@@ -48,11 +48,11 @@ function Enquiry(props) {
         <div className="contact-info">
           <div className="question">
             <h2 className="enquiry-title">How can we help you?</h2>
-            <h6 className="enquiry-description">
+            <p className="enquiry-description">
               Thank you for your interest in AgroBioChem. If you have any
               questions about our products or services, please let us know
               below, our team will get back to you as soon as possible.
-            </h6>
+            </p>
             <form onSubmit={handleSubmit}>
               <div className="main-input">
                 <input
@@ -112,8 +112,8 @@ const Container = styled.div`
     padding: 2% 5%;
   }
   .enquiry-title {
-    font-size: 25px;
-    font-family: "Kanit";
+    font-size: 30px;
+    font-family: "Poppins";
     font-weight: 700;
     color: gray;
   }
