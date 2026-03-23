@@ -283,7 +283,7 @@ const Container = styled.div`
   }
   .productImg {
     width: 170px;
-    height: 170px;
+    height: 270px;
   }
    .productDetail-main {
     display: flex;
