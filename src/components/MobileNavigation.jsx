@@ -4,7 +4,6 @@ import { Fade } from "react-reveal";
 import Product from "../assets/Products.png";
 import Service from "../assets/Services.png";
 import Resource from "../assets/About.png";
-import AllProducts from "../utils/AllProducts";
 import ServiceMain from "../utils/Services";
 import ResourceMain from "../utils/Supports";
 import Cancel from "../assets/cancel_1.png";
@@ -152,11 +151,6 @@ const Container = styled.div`
         color: gray;
         font-family: Poppins;
         list-style-type: none;
-        :hover{
-          cursor: pointer;
-          transform: scale(1.1);
-          color: #66b302;
-        }
       }
     }
     .products{
