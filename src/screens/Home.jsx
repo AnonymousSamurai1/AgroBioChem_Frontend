@@ -34,14 +34,6 @@ const GlobalStyle = createGlobalStyle`
 function Home() {
   const [click, setClick] = useState(false);
 
-  const HandleClick = () => {
-    return setClick(true);
-  };
-
-  const HandleUnclick = () => {
-    return setClick(false);
-  };
-
   const slideImages = [
     {
       image: Person1,
@@ -85,7 +77,7 @@ function Home() {
             <div className="icons">
               <img src={Logo} alt="Logo" className="logo" />
               <div className="button-container">
-                <button onClick={HandleClick} className="button">
+                <button onClick={() => setClick(true)} className="button">
                   {" "}
                   GET STARTED
                 </button>
@@ -95,7 +87,7 @@ function Home() {
                       src={Cancel}
                       alt="Cancel"
                       className="cancel-main"
-                      onClick={HandleUnclick}
+                      onClick={() => setClick(false)}
                     />
                     <Navbar />
                     <Link to="/authen">
