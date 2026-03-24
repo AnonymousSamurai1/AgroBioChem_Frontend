@@ -203,18 +203,18 @@ const Container = styled.div`
       padding: 2% 3.5%;
     }
     .input-box {
-      width: 360px;
+      width: 390px;
       height: 60px;
     }
     textarea {
-      width: 360px;
+      width: 390px;
       height: 60px;
     }
     .farmer {
       display: none;
     }
     .submit {
-      width: 380px;
+      width: 410px;
     }
     .submit: hover {
     cursor: none;

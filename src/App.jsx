@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Home from "./screens/Introduction";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Loader from "./assets/Logo.svg";
 import { BarLoader } from "react-spinners";
 import Fade from "react-reveal";
+import Introduction from "./screens/Home";
+
 
 function App() {
   const [loading, setLoading] = useState();
@@ -38,7 +39,7 @@ function App() {
         </div>
       ) : (
         <Fade>
-          <Home />
+          <Introduction />
         </Fade>
       )}
     </Container>

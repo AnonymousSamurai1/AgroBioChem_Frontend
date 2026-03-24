@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Fade } from "react-reveal";
-import Product from "../assets/Product.png";
-import Service from "../assets/Service.png";
+import Product from "../assets/Products.png";
+import Service from "../assets/Services.png";
 import Resource from "../assets/About.png";
 import AllProducts from "../utils/AllProducts";
 import ServiceMain from "../utils/Services";
