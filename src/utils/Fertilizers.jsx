@@ -350,5 +350,84 @@ const Container = styled.div`
   span {
     color: #008a09ff;
   }
+  @media (max-width: 420px){
+     .typed1 {
+      padding: 0% 23%;
+    }
+    .search {
+      width: 360px;
+      height: 40px;
+    }
+    .productsGrid {
+      width: 95%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      max-height: 65vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      outline: none;
+      justify-content: space-around;
+      scrollbar-width: none;
+    }
+    
+    .carder {
+      padding: 2% 4%;
+    }
+    .productCard {
+      border-radius: 10px;
+      width: 100%;
+      padding: 10%;
+      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+      :hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      p {
+        color: grey;
+        font-size: 12px;
+        font-family: Kanit;
+      }
+    }
+    .productImg {
+      width: 100px;
+      height: 200px;
+    }
+    .inputMain {
+      width: 90.5%;
+      backdrop-filter: blur(10px);
+      padding: 5% 0%;
+    }
+    .productMain {
+      width: 100%;
+      height: 91%;
+    }
+    .productDetail-main {
+      display: block;
+      img {
+        padding: 0% 25%;
+        width: 150px;
+        height: 270px;
+      }
+    }
+    .product-title {
+      padding: 0% 0% 1% 0%;
+      color: grey;
+      font-size: 30px;
+    }
+    .product-description {
+      padding: 2% 2%;
+      font-size: 14px;
+    }
+    .product-category,
+    .product-sub-category,
+    .product-ingredient {
+      padding: 1% 2%;
+      font-size: 13px;
+    }
+    span {
+      color: #008a09ff;
+    }
+  }
 `;
 export default Fertilizer;

@@ -31,7 +31,7 @@ import FarmerImage from "../assets/Farmer.png";
 import AllProducts from "../utils/AllProducts";
 import Services from "../utils/Services";
 import Herbicides from "../utils/Herbicides";
-import Fertilizer from "../utils/Fertilizer";
+import Fertilizers from "../utils/Fertilizers";
 import Supports from "../utils/Supports";
 import CoreValues from "../utils/CoreValues";
 import Insecticides from "../utils/Insecticides";
@@ -504,7 +504,7 @@ function Navigation() {
               onClick={HandleFertilizersOut}
             />
             <br />
-            <Fertilizer remove={Cancel} />
+            <Fertilizers remove={Cancel} />
           </div>
         </div>
       )}

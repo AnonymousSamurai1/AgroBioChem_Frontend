@@ -16,12 +16,18 @@ import Enquiry from "../utils/Enquiry";
 import Location from "../utils/Location";
 import LocationImage from "../assets/map.png";
 import Cancel from "../assets/cancel.png";
+import Cancel1 from "../assets/cancel_1.png";
 import Navbar from "../components/WebNavigation";
 import { Link } from "react-router-dom";
 import MobileNavigation from "../components/MobileNavigation";
-import Facebook from "../assets/Facebook1.png"
-import Instagram from "../assets/Instagram1.png"
-import WhatsApp from "../assets/WhatsApp1.png"
+import Facebook from "../assets/Facebook1.png";
+import Instagram from "../assets/Instagram1.png";
+import WhatsApp from "../assets/WhatsApp1.png";
+import Herbicides from "../utils/Herbicides";
+import Insecticides from "../utils/Insecticides";
+import Fungicides from "../utils/Fungicides";
+import Fertilizers from "../utils/Fertilizers";
+import Hormones from "../utils/Hormones";
 
 const GlobalStyle = createGlobalStyle`
   body.lock-scroll {
@@ -33,6 +39,11 @@ const GlobalStyle = createGlobalStyle`
 
 function Home() {
   const [click, setClick] = useState(false);
+  const [showHerbicide, setShowHerbicide] = useState(false);
+  const [showInsecticide, setShowInsecticide] = useState(false);
+  const [showFungicide, setShowFungicide] = useState(false);
+  const [showFertilizer, setShowFertilizer] = useState(false);
+  const [showHormone, setShowHormone] = useState(false);
 
   const slideImages = [
     {
@@ -71,7 +82,7 @@ function Home() {
       <GlobalStyle />
       <Container>
         <div className="introduction">
-          <video src={IntroPage} autoPlay loop muted className="video"/>
+          <video src={IntroPage} autoPlay loop muted className="video" />
 
           <div className="description">
             <div className="icons">
@@ -105,23 +116,21 @@ function Home() {
               />
             </div>
 
-            {toggle && (     
+            {toggle && (
               <div className="toggle_main">
                 <Fade left duration={1000}>
                   <div className="toggle-background">
-                    <div className="menu-cancel">
-                      <img
-                        src={Cancel}
-                        alt="Cancel"
-                        className="remove"
-                        onClick={() => setToggle(false)}
-                      />
-                    </div>
-                    <br />
-                    <MobileNavigation />
+                    <MobileNavigation
+                      onOpenHerbicide={() => setShowHerbicide(true)}
+                      onOpenInsecticide={() => setShowInsecticide(true)}
+                      onOpenFungicide={() => setShowFungicide(true)}
+                      onOpenFertilizer={() => setShowFertilizer(true)}
+                      onOpenHormone={() => setShowHormone(true)}
+
+                    />
                   </div>
                 </Fade>
-                <div className="blank" onClick={() => setToggle(false)}/>
+                <div className="blank" onClick={() => setToggle(false)} />
               </div>
             )}
             <IntroDescription />
@@ -181,7 +190,10 @@ function Home() {
               className="testimony-main"
             />
             <div className="testimony-details">
-              <p>Discover the experiences of farmers who have improved their harvests using our products.</p>
+              <p>
+                Discover the experiences of farmers who have improved their
+                harvests using our products.
+              </p>
             </div>
             <div className="details-sub">
               <Slide
@@ -223,6 +235,92 @@ function Home() {
           </div>
           <p>&copy; 2025 AgroBioChem. All rights reserved.</p>
         </footer>
+
+        {showHerbicide && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowHerbicide(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+
+                <Herbicides remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
+
+        {showInsecticide && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowInsecticide(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+                <Insecticides remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
+
+        {showFungicide && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowFungicide(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+                <Fungicides remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
+
+        {showFertilizer && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowFertilizer(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+                <Fertilizers remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
+
+        {showHormone && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowHormone(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+                <Hormones remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
       </Container>
     </>
   );
@@ -324,6 +422,9 @@ const Container = styled.div`
   footer{
     display: none;
   }
+  .global-modal{
+    display: none;
+  }
   @media (max-width: 420px) {
     .introduction {
       max-height: 100vh;
@@ -343,6 +444,7 @@ const Container = styled.div`
       display: block;
       width: 60px;
       height: 60px;
+      padding-right: 4%;b
     }
     .description {
       width: 107%;
@@ -423,24 +525,24 @@ const Container = styled.div`
       }
       .main-slide {
         padding: 0%;
-        width: 70%;
+        width: 80%;
         border: none;
         
       }
       .slider{
-        width: 350px;
+        width: 370px;
         height: 270px;
       }
       h2 {
         text-align: center;
         padding: 3% 12%;
         color: gray;
-        width: 240px;
+        width: 260px;
         font-size: 14px;
         font-family: "Poppins", sans-serif;
       }
       p {
-        width: 240px;
+        width: 260px;
         padding: 3% 10%;
         color: grey;
         font-family: Kanit;
@@ -466,7 +568,7 @@ const Container = styled.div`
       display: flex;
     }
     .toggle-background {
-      background: rgb(255, 255, 255);
+      background: rgba(7, 7, 7, 0.26);
       position: absolute;
       top: 0;
       left: 0;
@@ -475,7 +577,7 @@ const Container = styled.div`
       display: flex;
       width: 50%;
       height: 107vh;
-      z-index: 5;
+      z-index: 3;
       backdrop-filter: blur(30px);
       overflow: hidden;
       border-radius: 20px;
@@ -530,6 +632,37 @@ const Container = styled.div`
         width: 60px;
         height: 60px;
       }
+    }
+    .global-modal {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      width: 107vw;
+      height: 107vh;
+      align-items: end;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+    .blank_a{
+      width: 107vw;
+      height: 20vh;
+    }
+    .global-modal-box {
+      background: white;
+      width: 90.8%;
+      min-height: 90vh;
+      border-radius: 20px;
+      padding: 20px;
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    .global-cancel {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      float: right;
     }
     
   }
