@@ -222,16 +222,6 @@ const Container = styled.div`
     padding: 1% 10%;
     border-radius: 20px;
   }
-  .productMain {
-    background: white;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
   .inputMain {
     position: absolute;
     top: 0;
@@ -360,7 +350,7 @@ const Container = styled.div`
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      max-height: 65vh;
+      max-height: 75vh;
       overflow-y: scroll;
       overflow-x: hidden;
       outline: none;
@@ -397,7 +387,7 @@ const Container = styled.div`
     }
     .productMain {
       width: 100%;
-      height: 91%;
+      height: 97%;
     }
     .productDetail-main {
       display: block;

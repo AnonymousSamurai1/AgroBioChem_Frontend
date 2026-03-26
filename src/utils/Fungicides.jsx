@@ -345,7 +345,7 @@ const Container = styled.div`
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      max-height: 65vh;
+      max-height: 75vh;
       overflow-y: scroll;
       overflow-x: hidden;
       outline: none;
@@ -382,7 +382,7 @@ const Container = styled.div`
     }
     .productMain {
       width: 100%;
-      height: 91%;
+      height: 97%;
     }
     .productDetail-main {
       display: block;
