@@ -33,7 +33,6 @@ function MobileNavigation({
               <li className="list" onClick={onOpenResource}>Resources</li>
             </div>
           </Fade>
-se
           <Fade left duration={2000}>
             <div
               className="menu3"

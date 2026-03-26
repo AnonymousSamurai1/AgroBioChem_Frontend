@@ -688,12 +688,12 @@ const Container = styled.div`
     }
     .blank_a{
       width: 107vw;
-      height: 20vh;
+      height: 7vh;
     }
     .global-modal-box {
       background: white;
       width: 90.8%;
-      min-height: 90vh;
+      min-height: 95vh;
       border-radius: 20px;
       padding: 20px;
       border-radius: 20px 20px 0px 0px;
