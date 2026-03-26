@@ -22,7 +22,7 @@ function DashQuestion() {
   const fetchProducts = async () => {
     try {
       const res = await fetch(
-        "https://agro-bio-chem-backend.vercel.app/agrobiochem/api/questions/",
+        "https://agrobiochemsbackend.vercel.app/agrobiochem/api/questions/",
       );
 
       if (!res.ok) {
