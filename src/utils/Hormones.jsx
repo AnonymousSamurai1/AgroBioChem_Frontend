@@ -330,8 +330,8 @@ const Container = styled.div`
     color: #008a09ff;
   }
   @media (max-width: 420px){
-      .typed1 {
-      padding: 0% 23%;
+    .typed1 {
+      padding: 0% 14%;
     }
     .search {
       width: 360px;

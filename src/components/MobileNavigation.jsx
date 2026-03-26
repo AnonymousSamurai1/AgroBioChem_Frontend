@@ -11,6 +11,8 @@ function MobileNavigation({
   onOpenFungicide,
   onOpenFertilizer,
   onOpenHormone,
+  onOpenService,
+  onOpenResource,
 }) {
   const [productmain, setProductmain] = useState(false);
 
@@ -21,17 +23,17 @@ function MobileNavigation({
           <Fade left duration={1000}>
             <div className="menu1">
               <img src={Service} alt="services" />
-              <li className="list">Services</li>
+              <li className="list" onClick={onOpenService }>Services</li>
             </div>
           </Fade>
 
           <Fade left duration={1500}>
             <div className="menu2">
               <img src={Resource} alt="resources" />
-              <li className="list">Resources</li>
+              <li className="list" onClick={onOpenResource}>Resources</li>
             </div>
           </Fade>
-
+se
           <Fade left duration={2000}>
             <div
               className="menu3"

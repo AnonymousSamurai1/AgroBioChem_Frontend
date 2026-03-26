@@ -47,7 +47,6 @@ function Services() {
           loop
           className="typed1"
         />
-        <h1 className="title-main">Services</h1>
       </div>
 
       <div className="service">
@@ -85,9 +84,6 @@ const Container = styled.div`
     -webkit-text-fill-color: transparent;
     font-weight: bolder;
     font-family: "Poppins", sans-serif;
-  }
-  .title-main {
-    display: none;
   }
   .service {
     display: flex;
@@ -135,39 +131,23 @@ const Container = styled.div`
   }
 
   @media (max-width: 420px) {
-    width: 90%;
+    width: 100%;
 
     .service {
       max-height: 95vh;
     }
-
     .title {
       padding: 0%;
     }
-
     .typed1 {
-      display: none;
+      padding: 0% 30%;
     }
-    .title-main {
-    display: block;
-      font-size: 45px;
-      background: linear-gradient(
-        97.24deg,
-        rgb(63, 212, 50) 44.37%,
-        rgba(160, 207, 167, 0.25) 113.02%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bolder;
-      font-family: "Poppins", sans-serif;
-      text-align: center;
-      padding: 0% 33%;
-    }
-
+    
     .service-main {
-      padding: 0% 13%;
+      padding: 0% 8%;
     }
     .service-image {
+      padding: 15% 0%;
       width: 290px;
       height: 250px;
     }

@@ -36,7 +36,13 @@ function Supports() {
           loop
           className="typed1"
         />
-        <h1 className="title-main">Supports and Resources</h1>
+        <Typed
+          strings={["Resources"]}
+          typeSpeed={80}
+          backSpeed={80}
+          loop
+          className="typed1_a"
+        />
       </div>
       <div className="support">
         {supportCat.map((each, index) => (
@@ -73,21 +79,21 @@ const Container = styled.div`
     font-weight: bolder;
     font-family: 'Poppins', sans-serif;
   }
-  .title-main{
+  .typed1_a{
     display: none;
   }
   .support {
     display: flex;
     flex-wrap: wrap;
-    padding: 6% 4.7%;
+    padding: 1% 6%;
     width: 100%;
+    max-height: 500px;
     overflow-y: auto;
   }
   .support-main {
     position: relative;
     text-align: center;
     padding: 1.7%;
-    justify-content: space-between;
     :hover{
       cursor: pointer;
       transform: scale(1.1);
@@ -124,43 +130,42 @@ const Container = styled.div`
     font-size: 12px;
   }
   @media (max-width: 420px){
-    .title{
-      padding 1% 17%;
-    }
-    .typed1 {
-      display: none;
-    }
-    .title-main {
-    display: block;
-      font-size: 40px;
-      background: linear-gradient(
-        97.24deg,
-        rgb(63, 212, 50) 44.37%,
-        rgba(160, 207, 167, 0.25) 113.02%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bolder;
-      font-family: "Poppins", sans-serif;
-      text-align: center;
-      padding: 0% 15%;
-    }
+    width: 100%;
+
     .support {
-      padding: 0% 6%;
       max-height: 95vh;
     }
-   .support-main {
-      padding: 2% 13%;
+    .title {
+      padding: 0%;
+    }
+    .typed1{
+      display: none;
+    }
+    .typed1_a {
+      display: block;
+      padding: 0% 23%;
+      font-size: 35px;
+      background: linear-gradient(97.24deg,rgb(63, 212, 50) 44.37%, rgba(160, 207, 167, 0.25) 113.02%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      font-weight: bolder;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .support-main {
+      padding: 0% 8%;
     }
     .support-image {
-      width: 270px;
-      height: 230px;
-      transition: 0.3s ease;
+      padding: 6% 0%;
+      width: 290px;
+      height: 250px;
     }
     .support-details {
-      top: 19.5%;
-      width: 250px;
-      height: 210px;
+      top: 12.5%;
+      width: 270px;
+      height: 230px;
     }
     
   }

@@ -28,6 +28,8 @@ import Insecticides from "../utils/Insecticides";
 import Fungicides from "../utils/Fungicides";
 import Fertilizers from "../utils/Fertilizers";
 import Hormones from "../utils/Hormones";
+import Services from "../utils/Services";
+import Resources from "../utils/Supports";
 
 const GlobalStyle = createGlobalStyle`
   body.lock-scroll {
@@ -44,6 +46,8 @@ function Home() {
   const [showFungicide, setShowFungicide] = useState(false);
   const [showFertilizer, setShowFertilizer] = useState(false);
   const [showHormone, setShowHormone] = useState(false);
+  const [showService, setShowService] = useState(false);
+  const [showResource, setShowResource] = useState(false);
 
   const slideImages = [
     {
@@ -121,12 +125,13 @@ function Home() {
                 <Fade left duration={1000}>
                   <div className="toggle-background">
                     <MobileNavigation
+                      onOpenService={() => setShowService(true)}
+                      onOpenResource={() => setShowResource(true)}
                       onOpenHerbicide={() => setShowHerbicide(true)}
                       onOpenInsecticide={() => setShowInsecticide(true)}
                       onOpenFungicide={() => setShowFungicide(true)}
                       onOpenFertilizer={() => setShowFertilizer(true)}
                       onOpenHormone={() => setShowHormone(true)}
-
                     />
                   </div>
                 </Fade>
@@ -235,6 +240,42 @@ function Home() {
           </div>
           <p>&copy; 2025 AgroBioChem. All rights reserved.</p>
         </footer>
+
+        {showService && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowService(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+
+                <Services remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
+
+        {showResource && (
+          <div className="global-modal">
+            <div
+              className="blank_a"
+              onClick={() => {
+                setShowResource(false);
+              }}
+            />
+            <br />
+            <Fade bottom duration={1000}>
+              <div className="global-modal-box">
+
+                <Resources remove={Cancel1}/>
+              </div>
+            </Fade>
+          </div>
+        )}
 
         {showHerbicide && (
           <div className="global-modal">

@@ -162,9 +162,6 @@ function Fertilizer(props) {
                       <span>Active Ingredient:</span> {selectedProduct.activeIngredient}
                     </p>
                     <p className="product-ingredient">
-                      <span>Dosage:</span> {selectedProduct.dosage}
-                    </p>
-                    <p className="product-ingredient">
                       <span>Package Size:</span> {selectedProduct.packageSize}
                     </p>
                   </div>
@@ -391,7 +388,7 @@ const Container = styled.div`
     }
     .productImg {
       width: 100px;
-      height: 200px;
+      height: 150px;
     }
     .inputMain {
       width: 90.5%;
@@ -406,8 +403,8 @@ const Container = styled.div`
       display: block;
       img {
         padding: 0% 25%;
-        width: 150px;
-        height: 270px;
+        width: 170px;
+        height: 250px;
       }
     }
     .product-title {
