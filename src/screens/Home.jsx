@@ -252,8 +252,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-
-                <Services remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowService(false);
+              }}
+              />
+              <br />
+              <Services remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -270,8 +278,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-
-                <Resources remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowResource(false);
+              }}
+              />
+              <br />
+              <Resources remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -288,8 +304,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-
-                <Herbicides remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowHerbicide(false);
+              }}
+              />
+              <br />
+              <Herbicides remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -306,7 +330,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-                <Insecticides remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowInsecticide(false);
+              }}
+              />
+              <br />
+              <Insecticides remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -323,7 +356,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-                <Fungicides remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowFungicide(false);
+              }}
+              />
+              <br />
+              <Fungicides remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -340,7 +382,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-                <Fertilizers remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowFertilizer(false);
+                }}
+              />
+              <br />
+              <Fertilizers remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -357,7 +408,16 @@ function Home() {
             <br />
             <Fade bottom duration={1000}>
               <div className="global-modal-box">
-                <Hormones remove={Cancel1}/>
+              <img
+                src={Cancel1}
+                alt="cancel1"
+                className="cancel1"
+                onClick={() => {
+                setShowHormone(false);
+              }}
+              />
+              <br />
+              <Hormones remove={Cancel1}/>
               </div>
             </Fade>
           </div>
@@ -466,6 +526,7 @@ const Container = styled.div`
   .global-modal{
     display: none;
   }
+  
   @media (max-width: 420px) {
     .introduction {
       max-height: 100vh;
@@ -703,6 +764,11 @@ const Container = styled.div`
       width: 30px;
       height: 30px;
       cursor: pointer;
+      float: right;
+    }
+    .cancel1 {
+      width: 30px;
+      height: 30px;
       float: right;
     }
     
